@@ -26,76 +26,83 @@ class TeamFormation {
   }
 
   calculateTeamSizes(totalStudents, numTeams) {
+    console.log(`  Calculating team sizes: ${totalStudents} students into ${numTeams} teams`);
+
     for (let num5 = 0; num5 <= numTeams; num5++) {
       const num4 = numTeams - num5;
-      if ((num4 * 4) + (num5 * 5) === totalStudents) {
+      const total = (num4 * 4) + (num5 * 5);
+
+      if (total === totalStudents) {
         const sizes = [];
         for (let i = 0; i < num4; i++) sizes.push(4);
         for (let i = 0; i < num5; i++) sizes.push(5);
+        console.log(`    ✓ Found: ${num4}×4 + ${num5}×5 = ${total}`);
         return sizes;
       }
     }
+    console.log(`    ✗ No valid size distribution found`);
     return null;
   }
 
-  // Smart gender distribution planner
+  // Smarter gender distribution planner with fallback strategies
   planGenderDistribution(teamSizes, maleCount, femaleCount) {
-    const distribution = [];
+    console.log(`  Planning gender distribution...`);
+    console.log(`    Need to distribute: ${maleCount}M, ${femaleCount}F`);
 
-    // Count teams of each size
     const num4 = teamSizes.filter(s => s === 4).length;
     const num5 = teamSizes.filter(s => s === 5).length;
 
-    console.log(`Planning distribution: ${num4} teams of 4, ${num5} teams of 5`);
-    console.log(`Available: ${maleCount}M, ${femaleCount}F`);
+    // Strategy 1: Exhaustive search
+    console.log(`    Strategy 1: Exhaustive search (${num4} size-4, ${num5} size-5 teams)`);
+    let result = this.exhaustiveSearch(num4, num5, maleCount, femaleCount);
+    if (result) return result;
 
-    // Try to find a valid allocation
-    // For size 4: can be (2M:2F), (4M:0F), (0M:4F)
-    // For size 5: can be (3M:2F), (2M:3F), (5M:0F), (0M:5F)
+    // Strategy 2: Greedy with all-male preference
+    console.log(`    Strategy 2: Greedy with all-male teams`);
+    result = this.greedyDistribution(num4, num5, maleCount, femaleCount, true);
+    if (result) return result;
 
-    // Try all combinations of size-4 team compositions
+    // Strategy 3: Greedy with all-female preference
+    console.log(`    Strategy 3: Greedy with all-female teams`);
+    result = this.greedyDistribution(num4, num5, maleCount, femaleCount, false);
+    if (result) return result;
+
+    console.log(`    ✗ Could not find valid gender distribution`);
+    return null;
+  }
+
+  // Exhaustive search through all combinations
+  exhaustiveSearch(num4, num5, maleCount, femaleCount) {
     for (let t4_2m2f = 0; t4_2m2f <= num4; t4_2m2f++) {
       for (let t4_4m0f = 0; t4_4m0f <= num4 - t4_2m2f; t4_4m0f++) {
         const t4_0m4f = num4 - t4_2m2f - t4_4m0f;
 
-        // Calculate males/females used by size-4 teams
         const m4 = (t4_2m2f * 2) + (t4_4m0f * 4) + (t4_0m4f * 0);
         const f4 = (t4_2m2f * 2) + (t4_4m0f * 0) + (t4_0m4f * 4);
 
-        // Remaining for size-5 teams
         const mRemain = maleCount - m4;
         const fRemain = femaleCount - f4;
 
         if (mRemain < 0 || fRemain < 0) continue;
 
-        // Try all combinations of size-5 team compositions
         for (let t5_3m2f = 0; t5_3m2f <= num5; t5_3m2f++) {
           for (let t5_2m3f = 0; t5_2m3f <= num5 - t5_3m2f; t5_2m3f++) {
             for (let t5_5m0f = 0; t5_5m0f <= num5 - t5_3m2f - t5_2m3f; t5_5m0f++) {
               const t5_0m5f = num5 - t5_3m2f - t5_2m3f - t5_5m0f;
 
-              // Calculate males/females used by size-5 teams
               const m5 = (t5_3m2f * 3) + (t5_2m3f * 2) + (t5_5m0f * 5) + (t5_0m5f * 0);
               const f5 = (t5_3m2f * 2) + (t5_2m3f * 3) + (t5_5m0f * 0) + (t5_0m5f * 5);
 
-              // Check if this allocation works
               if (m5 === mRemain && f5 === fRemain) {
-                console.log(`✓ Found valid distribution!`);
-                console.log(`  Size 4: ${t4_2m2f}×(2M:2F) + ${t4_4m0f}×(4M:0F) + ${t4_0m4f}×(0M:4F)`);
-                console.log(`  Size 5: ${t5_3m2f}×(3M:2F) + ${t5_2m3f}×(2M:3F) + ${t5_5m0f}×(5M:0F) + ${t5_0m5f}×(0M:5F)`);
-
-                // Build the distribution array
+                console.log(`      ✓ Found valid combo!`);
                 const dist = [];
-                // Size 4 teams
                 for (let i = 0; i < t4_2m2f; i++) dist.push({ male: 2, female: 2 });
                 for (let i = 0; i < t4_4m0f; i++) dist.push({ male: 4, female: 0 });
                 for (let i = 0; i < t4_0m4f; i++) dist.push({ male: 0, female: 4 });
-                // Size 5 teams
                 for (let i = 0; i < t5_3m2f; i++) dist.push({ male: 3, female: 2 });
                 for (let i = 0; i < t5_2m3f; i++) dist.push({ male: 2, female: 3 });
                 for (let i = 0; i < t5_5m0f; i++) dist.push({ male: 5, female: 0 });
                 for (let i = 0; i < t5_0m5f; i++) dist.push({ male: 0, female: 5 });
-
                 return dist;
               }
             }
@@ -103,8 +110,66 @@ class TeamFormation {
         }
       }
     }
+    return null;
+  }
 
-    console.log(`✗ Could not find valid gender distribution`);
+  // Greedy distribution (fallback)
+  greedyDistribution(num4, num5, maleCount, femaleCount, preferMale) {
+    const dist = [];
+    let m = maleCount;
+    let f = femaleCount;
+
+    // Assign size-4 teams
+    for (let i = 0; i < num4; i++) {
+      if (m >= 2 && f >= 2) {
+        dist.push({ male: 2, female: 2 });
+        m -= 2; f -= 2;
+      } else if (preferMale && m >= 4) {
+        dist.push({ male: 4, female: 0 });
+        m -= 4;
+      } else if (!preferMale && f >= 4) {
+        dist.push({ male: 0, female: 4 });
+        f -= 4;
+      } else if (m >= 4) {
+        dist.push({ male: 4, female: 0 });
+        m -= 4;
+      } else if (f >= 4) {
+        dist.push({ male: 0, female: 4 });
+        f -= 4;
+      } else {
+        return null; // Can't form valid team
+      }
+    }
+
+    // Assign size-5 teams
+    for (let i = 0; i < num5; i++) {
+      if (m >= 3 && f >= 2) {
+        dist.push({ male: 3, female: 2 });
+        m -= 3; f -= 2;
+      } else if (m >= 2 && f >= 3) {
+        dist.push({ male: 2, female: 3 });
+        m -= 2; f -= 3;
+      } else if (preferMale && m >= 5) {
+        dist.push({ male: 5, female: 0 });
+        m -= 5;
+      } else if (!preferMale && f >= 5) {
+        dist.push({ male: 0, female: 5 });
+        f -= 5;
+      } else if (m >= 5) {
+        dist.push({ male: 5, female: 0 });
+        m -= 5;
+      } else if (f >= 5) {
+        dist.push({ male: 0, female: 5 });
+        f -= 5;
+      } else {
+        return null; // Can't form valid team
+      }
+    }
+
+    if (m === 0 && f === 0) {
+      console.log(`      ✓ Found valid combo!`);
+      return dist;
+    }
     return null;
   }
 
@@ -139,7 +204,7 @@ class TeamFormation {
       team.femaleCount = composition.female;
 
       if (team.members.length !== size) {
-        console.log(`Error: Team size mismatch`);
+        console.log(`  Error: Team size mismatch`);
         return null;
       }
 
@@ -181,25 +246,17 @@ class TeamFormation {
       }
     }
 
-    return { success: false, error: 'Could not find valid team configuration' };
+    return { success: false, error: 'Could not find valid team configuration for this batch' };
   }
 
   tryFormTeams(numTeams, totalStudents, maleCount, femaleCount) {
     console.log(`\nTrying ${numTeams} teams...`);
 
     const teamSizes = this.calculateTeamSizes(totalStudents, numTeams);
-    if (!teamSizes) {
-      console.log(`  No valid size distribution`);
-      return { success: false };
-    }
-
-    console.log(`  Sizes: ${teamSizes.join(', ')}`);
+    if (!teamSizes) return { success: false };
 
     const genderDist = this.planGenderDistribution(teamSizes, maleCount, femaleCount);
-    if (!genderDist) {
-      console.log(`  Cannot distribute genders`);
-      return { success: false };
-    }
+    if (!genderDist) return { success: false };
 
     const teams = this.assignStudentsToTeams(teamSizes, genderDist);
     if (teams && teams.length === numTeams) {
@@ -223,6 +280,7 @@ class TeamFormation {
 function generateTeamsForBatch() {
   console.clear();
   console.log('=== TEAM GENERATION STARTED ===');
+  console.log(`Dept: ${currentDept}, Batch: ${currentBatch}`);
   console.log(`Students: ${allStudents.length}`);
   console.log(`Males: ${allStudents.filter(s => s.Gender === 'M').length}`);
   console.log(`Females: ${allStudents.filter(s => s.Gender === 'F').length}`);
@@ -240,6 +298,7 @@ function generateTeamsForBatch() {
   if (result.success) {
     console.log('✓ Teams generated successfully!');
     console.log(`Teams: ${result.teams.length}`);
+    console.log('Breakdown:', result.teams.map((t, i) => `T${i+1}(${t.maleCount}M:${t.femaleCount}F)`).join(', '));
 
     sessionStorage.setItem('generatedTeams', JSON.stringify({
       dept: currentDept,
