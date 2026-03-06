@@ -1,0 +1,13 @@
+{
+  "name": "student-growth-webapp",
+  "version": "1.0.0",
+  "description": "Student Growth Tracking and Alumni Mentorship System",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server",
+    "dev": "http-server -p 8000"
+  },
+  "keywords": ["student", "growth", "mentorship", "alumni"],
+  "author": "Shahana",
+  "license": "MIT"
+}
