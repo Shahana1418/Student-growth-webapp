@@ -1,190 +1,287 @@
-/* Batches Page Styles */
+/* ==========================================
+   BATCHES PAGE - PROFESSIONAL STYLING
+   ========================================== */
 
 .batches-container {
   min-height: calc(100vh - 130px);
-  background: linear-gradient(135deg, var(--light-blue) 0%, #f0f4ff 100%);
-  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  padding: 3rem 2rem;
 }
 
+/* ==========================================
+   BATCHES HEADER
+   ========================================== */
 .batches-header {
   max-width: 1000px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
   display: flex;
   align-items: center;
   gap: 2rem;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--bg-card);
+  padding: 2.25rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
 }
 
 .header-icon {
-  font-size: 3rem;
-  min-width: 60px;
+  font-size: 3.25rem;
+  min-width: 70px;
   text-align: center;
+  background: var(--primary-light);
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.batches-header:hover .header-icon {
+  transform: scale(1.08);
 }
 
 .header-info h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--dark-text);
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
 }
 
 .header-info p {
-  font-size: 0.95rem;
-  color: var(--light-gray);
-}
-
-/* Breadcrumb Navigation */
-.breadcrumb-separator {
-  margin: 0 0.5rem;
-  color: var(--light-gray);
-}
-
-.breadcrumb a {
-  color: var(--primary-blue);
-  text-decoration: none;
-  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-muted);
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
-.breadcrumb a:hover {
-  color: #1e40af;
-}
-
-/* Department Stats */
+/* ==========================================
+   DEPARTMENT STATS
+   ========================================== */
 .dept-stats {
   max-width: 1000px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .stat-box {
-  background: var(--white);
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.08) 0%, rgba(30, 64, 175, 0.02) 100%);
   padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   text-align: center;
-  border-top: 4px solid;
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
 }
 
 .stat-box.blue {
-  border-top-color: var(--primary-blue);
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(30, 64, 175, 0.03) 100%);
+  border-color: rgba(30, 64, 175, 0.25);
 }
 
-.stat-box.blue .stat-value {
-  color: var(--primary-blue);
+.stat-box.blue::before {
+  background: linear-gradient(90deg, #1e40af, #1e3a8a);
 }
 
 .stat-box.green {
-  border-top-color: #059669;
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(5, 150, 105, 0.03) 100%);
+  border-color: rgba(5, 150, 105, 0.25);
 }
 
-.stat-box.green .stat-value {
-  color: #059669;
+.stat-box.green::before {
+  background: linear-gradient(90deg, #059669, #047857);
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .stat-label {
-  font-size: 0.85rem;
-  color: var(--light-gray);
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .stat-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  letter-spacing: -1px;
+}
+
+.stat-box.blue .stat-value {
+  color: var(--primary);
+}
+
+.stat-box.green .stat-value {
+  color: var(--success);
 }
 
 .stat-breakdown {
   font-size: 0.9rem;
-  color: var(--light-gray);
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
-/* Batches Section */
+/* ==========================================
+   BREADCRUMB NAVIGATION
+   ========================================== */
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.breadcrumb a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.breadcrumb a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   BATCHES SECTION
+   ========================================== */
 .batches-section {
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .batches-section h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--dark-text);
-  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
 }
 
 .batches-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
-/* Batch Card */
+/* ==========================================
+   BATCH CARD
+   ========================================== */
 .batch-card {
-  background: var(--white);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 0;
+  box-shadow: var(--shadow-md);
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-left: 5px solid;
-  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid var(--border-color);
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.batch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 2;
+}
+
+.batch-card.blue::before {
+  background: linear-gradient(90deg, #1e40af, #1e3a8a);
+}
+
+.batch-card.green::before {
+  background: linear-gradient(90deg, #059669, #047857);
+}
+
+.batch-card.purple::before {
+  background: linear-gradient(90deg, #7c3aed, #6d28d9);
 }
 
 .batch-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-.batch-card.blue {
-  border-left-color: var(--primary-blue);
-}
-
-.batch-card.green {
-  border-left-color: #059669;
-}
-
-.batch-card.purple {
-  border-left-color: #7c3aed;
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(30, 64, 175, 0.2);
 }
 
 .batch-card-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border-bottom: 1px solid var(--border-color-light);
 }
 
 .batch-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.batch-card:hover .batch-icon {
+  transform: scale(1.1);
 }
 
 .batch-card.blue .batch-icon {
-  background: rgba(30, 58, 138, 0.1);
+  background: rgba(30, 64, 175, 0.12);
 }
 
 .batch-card.green .batch-icon {
-  background: rgba(5, 150, 105, 0.1);
+  background: rgba(5, 150, 105, 0.12);
 }
 
 .batch-card.purple .batch-icon {
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(124, 58, 237, 0.12);
 }
 
 .batch-title {
@@ -192,23 +289,24 @@
 }
 
 .batch-title h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--dark-text);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
+  letter-spacing: -0.3px;
 }
 
 .batch-title p {
-  font-size: 0.85rem;
-  color: var(--light-gray);
+  font-size: 0.8rem;
+  color: var(--text-muted);
   margin: 0;
+  font-weight: 600;
 }
 
 .batch-details {
-  background: var(--light-blue);
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  background: var(--bg-page);
+  padding: 1.1rem 1.75rem;
+  border-bottom: 1px solid var(--border-color-light);
   font-size: 0.9rem;
 }
 
@@ -223,63 +321,84 @@
 }
 
 .batch-details-label {
-  color: var(--light-gray);
-  font-weight: 500;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.8rem;
 }
 
 .batch-details-value {
-  color: var(--dark-text);
-  font-weight: 600;
+  color: var(--text-primary);
+  font-weight: 800;
 }
 
 .batch-stats {
+  padding: 1.5rem 1.75rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1.25rem;
+  flex: 1;
 }
 
 .batch-stat {
   text-align: center;
+  padding: 1rem;
+  background: var(--bg-page);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.batch-stat:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
 }
 
 .batch-stat-label {
   font-size: 0.75rem;
-  color: var(--light-gray);
+  color: var(--text-muted);
   text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
 }
 
 .batch-stat-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--dark-text);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
 }
 
 .batch-stat-breakdown {
   font-size: 0.75rem;
-  color: var(--light-gray);
-  margin-top: 0.3rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-weight: 600;
 }
 
 .batch-stat-breakdown .male {
   color: #2563eb;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .batch-stat-breakdown .female {
-  color: #ec4899;
-  font-weight: 600;
+  color: #db2777;
+  font-weight: 800;
 }
 
 .batch-action {
+  padding: 0 1.75rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: var(--primary-blue);
-  font-weight: 600;
+  color: var(--primary);
+  font-weight: 700;
   font-size: 0.9rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.batch-card:hover .batch-action {
+  opacity: 1;
 }
 
 .batch-action svg {
@@ -293,50 +412,74 @@
   transform: translateX(5px);
 }
 
-/* Semester Label */
+/* ==========================================
+   SEMESTER LABEL
+   ========================================== */
 .sem-label {
   display: inline-block;
-  background: #ffa500;
-  color: var(--white);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-md);
   font-size: 0.8rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  letter-spacing: 0.5px;
 }
 
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
 @media (max-width: 768px) {
+  .batches-container {
+    padding: 2rem 1rem;
+  }
+
   .batches-header {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .header-left {
+    flex-direction: column;
+    width: 100%;
   }
 
   .dept-stats {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .batches-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .header-info h2 {
     font-size: 1.5rem;
   }
+
+  .batches-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   .batches-container {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .batches-header {
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
   }
 
   .header-icon {
     font-size: 2rem;
+    width: 60px;
+    height: 60px;
   }
 
   .header-info h2 {
@@ -351,7 +494,35 @@
     font-size: 2rem;
   }
 
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
   .batch-card {
-    padding: 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .batch-card-header {
+    padding: 1.25rem;
+  }
+
+  .batch-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+
+  .batch-title h4 {
+    font-size: 1rem;
+  }
+
+  .batch-stats {
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .batch-action {
+    padding: 0 1.25rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
