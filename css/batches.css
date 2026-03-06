@@ -272,6 +272,8 @@
   transition: transform 0.3s ease;
   background: #f0f9ff;
   color: #1e40af;
+  font-size: 1.8rem;
+  overflow: hidden;
 }
 
 .batch-card:hover .batch-icon {
