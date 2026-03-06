@@ -5,25 +5,25 @@
 .departments-container {
   min-height: calc(100vh - 130px);
   background: transparent;
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem;
 }
 
 .departments-header {
   max-width: 1200px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.5rem;
 }
 
 .departments-header h2 {
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   letter-spacing: -0.7px;
   font-family: 'Poppins', sans-serif;
 }
 
 .departments-header p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
@@ -32,15 +32,15 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
 }
 
 /* ==========================================
    DEPARTMENT CARD
    ========================================== */
 .department-card {
-  border-radius: var(--radius-xl);
+  border-radius: 12px;
   padding: 0;
   cursor: pointer;
   transition: all 0.4s ease;
@@ -48,7 +48,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 350px;
+  min-height: 260px;
 }
 
 .department-card::before {
@@ -98,24 +98,24 @@
 
 .department-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.25rem;
-  padding: 2rem 1.75rem;
+  gap: 0.75rem;
+  padding: 1.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   z-index: 2;
-  text-align: center;
+  text-align: left;
 }
 
 .department-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
   background: rgba(255, 255, 255, 0.15);
@@ -126,26 +126,26 @@
 }
 
 .department-info h3 {
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: white;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   letter-spacing: -0.3px;
   font-family: 'Poppins', sans-serif;
 }
 
 .department-info p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   font-weight: 500;
 }
 
 .department-stats {
-  padding: 1.5rem 1.75rem;
+  padding: 1rem 1.25rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 0.6rem;
   flex: 1;
   position: relative;
   z-index: 2;
@@ -156,10 +156,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  padding: 0.8rem;
+  gap: 0.2rem;
+  padding: 0.5rem 0.4rem;
   background: rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
@@ -168,15 +168,15 @@
 }
 
 .stat-item .label {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .stat-item .value {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: white;
   font-family: 'Poppins', sans-serif;
