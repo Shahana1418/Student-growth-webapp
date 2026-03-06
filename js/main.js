@@ -1,30 +1,18 @@
-// Navigation function
+// Navigation function v2
 function navigateTo(page) {
-  console.log(`Navigating to: ${page}`);
-
-  switch(page) {
-    case 'login':
-      window.location.href = 'login.html';
-      break;
-    case 'departments':
-      window.location.href = 'departments.html';
-      break;
-    default:
-      console.log('Unknown page:', page);
+  console.log('Navigating to:', page);
+  
+  if (page === 'login') {
+    window.location.href = 'login.html';
+  } else if (page === 'departments') {
+    window.location.href = 'departments.html';
   }
 }
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Student Growth Application loaded successfully');
-  initializeApp();
+  console.log('✅ Student Growth Application loaded v2');
 });
-
-function initializeApp() {
-  // Add any initialization logic here
-  // For now, this is just a placeholder for future functionality
-  console.log('App initialized');
-}
 
 // Add smooth transitions to buttons
 document.querySelectorAll('button').forEach(button => {
