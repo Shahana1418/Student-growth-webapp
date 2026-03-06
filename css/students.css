@@ -307,9 +307,10 @@
   font-weight: 700;
   white-space: nowrap;
   padding: 0.5rem 1rem;
-  background: #f1f5f9;
+  background: transparent;
   border-radius: 8px;
   letter-spacing: 0.3px;
+  display: none;
 }
 
 /* ==========================================
