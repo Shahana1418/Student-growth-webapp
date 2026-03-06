@@ -178,7 +178,7 @@ function createBatchCard(deptCode, batch) {
 function selectBatch(deptCode, year) {
   sessionStorage.setItem('selectedDept', deptCode);
   sessionStorage.setItem('selectedBatch', year);
-  alert(`Selected: ${departmentNames[deptCode]} - Batch ${year}\n\nThis will show student details in the next phase.`);
+  window.location.href = `students.html?dept=${deptCode}&batch=${year}`;
 }
 
 function goBack() {
