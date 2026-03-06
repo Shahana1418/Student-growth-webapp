@@ -61,19 +61,15 @@ async function loadStudents() {
   sessionStorage.setItem('selectedDept', currentDept);
   sessionStorage.setItem('selectedBatch', currentBatch);
 
-  // Load student data
+  // Load student data from embedded data
   try {
-    // Use GitHub raw content URL for reliable data loading
-    const response = await fetch('https://raw.githubusercontent.com/Shahana1418/Student-growth-webapp/main/data/students.json');
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    // Use embedded student data (loaded from students-data.js)
+    if (typeof STUDENTS_DATA === 'undefined') {
+      throw new Error('Student data not loaded. Please refresh the page.');
     }
 
-    const studentsData = await response.json();
-
     const key = `${currentDept}-${currentBatch}`;
-    allStudents = studentsData[key] || [];
+    allStudents = STUDENTS_DATA[key] || [];
 
     // Update page with data
     updatePageHeader();
