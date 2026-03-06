@@ -1,10 +1,10 @@
 /* ==========================================
-   DEPARTMENTS PAGE - PROFESSIONAL STYLING
+   DEPARTMENTS PAGE - GLASSMORPHISM STYLING
    ========================================== */
 
 .departments-container {
   min-height: calc(100vh - 130px);
-  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  background: transparent;
   padding: 3rem 2rem;
 }
 
@@ -16,14 +16,15 @@
 .departments-header h2 {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: white;
   margin-bottom: 0.5rem;
   letter-spacing: -0.7px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .departments-header p {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
@@ -31,7 +32,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.25rem;
 }
 
@@ -39,74 +40,72 @@
    DEPARTMENT CARD
    ========================================== */
 .department-card {
-  background: var(--bg-card);
   border-radius: var(--radius-xl);
   padding: 0;
-  box-shadow: var(--shadow-md);
   cursor: pointer;
   transition: all 0.4s ease;
-  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 350px;
 }
 
 .department-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--success));
-  z-index: 2;
+  inset: 0;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  z-index: 1;
 }
 
 .department-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(30, 64, 175, 0.2);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
 }
 
 .department-card.ate::before {
-  background: linear-gradient(90deg, #2563eb, #1e40af);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
 }
 
 .department-card.cse::before {
-  background: linear-gradient(90deg, #059669, #047857);
+  background: linear-gradient(135deg, #064e3b, #10b981);
 }
 
 .department-card.cve::before {
-  background: linear-gradient(90deg, #7c3aed, #6d28d9);
+  background: linear-gradient(135deg, #4c1d95, #8b5cf6);
 }
 
 .department-card.ece::before {
-  background: linear-gradient(90deg, #b45309, #92400e);
+  background: linear-gradient(135deg, #78350f, #f59e0b);
 }
 
 .department-card.eee::before {
-  background: linear-gradient(90deg, #0891b2, #0e7490);
+  background: linear-gradient(135deg, #164e63, #06b6d4);
 }
 
 .department-card.imt::before {
-  background: linear-gradient(90deg, #2563eb, #1e40af);
+  background: linear-gradient(135deg, #831843, #ec4899);
 }
 
 .department-card.mce::before {
-  background: linear-gradient(90deg, #059669, #047857);
+  background: linear-gradient(135deg, #1e293b, #64748b);
 }
 
 .department-card.cds::before {
-  background: linear-gradient(90deg, #7c3aed, #6d28d9);
+  background: linear-gradient(135deg, #881337, #f43f5e);
 }
 
 .department-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  padding: 1.75rem;
-  border-bottom: 1px solid var(--border-color-light);
+  padding: 2rem 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
 .department-icon {
@@ -119,55 +118,25 @@
   font-size: 1.8rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .department-card:hover .department-icon {
   transform: scale(1.1);
 }
 
-.department-card.ate .department-icon {
-  background: rgba(37, 99, 235, 0.12);
-}
-
-.department-card.cse .department-icon {
-  background: rgba(5, 150, 105, 0.12);
-}
-
-.department-card.cve .department-icon {
-  background: rgba(124, 58, 237, 0.12);
-}
-
-.department-card.ece .department-icon {
-  background: rgba(180, 83, 9, 0.12);
-}
-
-.department-card.eee .department-icon {
-  background: rgba(8, 145, 178, 0.12);
-}
-
-.department-card.imt .department-icon {
-  background: rgba(37, 99, 235, 0.12);
-}
-
-.department-card.mce .department-icon {
-  background: rgba(5, 150, 105, 0.12);
-}
-
-.department-card.cds .department-icon {
-  background: rgba(124, 58, 237, 0.12);
-}
-
 .department-info h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
   margin-bottom: 0.3rem;
   letter-spacing: -0.3px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .department-info p {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
   font-weight: 500;
 }
@@ -178,6 +147,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .stat-item {
@@ -187,35 +158,36 @@
   justify-content: center;
   gap: 0.4rem;
   padding: 0.8rem;
-  background: var(--bg-page);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: var(--radius-md);
   transition: all 0.3s ease;
 }
 
 .stat-item:hover {
-  background: var(--primary-light);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .stat-item .label {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .stat-item .value {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .stat-item.male .value {
-  color: #2563eb;
+  color: #60a5fa;
 }
 
 .stat-item.female .value {
-  color: #db2777;
+  color: #f472b6;
 }
 
 .department-action {
@@ -223,11 +195,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--primary);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 700;
   font-size: 0.9rem;
   opacity: 0.7;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .department-card:hover .department-action {
@@ -243,6 +217,21 @@
 
 .department-card:hover .department-action svg {
   transform: translateX(5px);
+}
+
+/* Student count badge */
+.department-card::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 3;
 }
 
 /* ==========================================
@@ -292,7 +281,7 @@
   }
 
   .department-card {
-    border-radius: var(--radius-lg);
+    min-height: 320px;
   }
 
   .department-header {

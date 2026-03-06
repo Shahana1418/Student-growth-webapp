@@ -1,10 +1,10 @@
 /* ==========================================
-   BATCHES PAGE - PROFESSIONAL STYLING
+   BATCHES PAGE - GLASSMORPHISM STYLING
    ========================================== */
 
 .batches-container {
   min-height: calc(100vh - 130px);
-  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  background: transparent;
   padding: 3rem 2rem;
 }
 
@@ -17,11 +17,13 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 2.25rem;
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .header-left {
@@ -35,7 +37,7 @@
   font-size: 3.25rem;
   min-width: 70px;
   text-align: center;
-  background: var(--primary-light);
+  background: rgba(255, 255, 255, 0.1);
   width: 70px;
   height: 70px;
   border-radius: var(--radius-lg);
@@ -52,14 +54,15 @@
 .header-info h2 {
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: white;
   margin-bottom: 0.4rem;
   letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header-info p {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
@@ -75,12 +78,14 @@
 }
 
 .stat-box {
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.08) 0%, rgba(30, 64, 175, 0.02) 100%);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 2rem;
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   text-align: center;
-  border: 1px solid rgba(30, 64, 175, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -93,35 +98,35 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(90deg, #818cf8, #6366f1);
+  z-index: 1;
 }
 
 .stat-box.blue {
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(30, 64, 175, 0.03) 100%);
-  border-color: rgba(30, 64, 175, 0.25);
+  border-left: 3px solid #3b82f6;
 }
 
 .stat-box.blue::before {
-  background: linear-gradient(90deg, #1e40af, #1e3a8a);
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
 }
 
 .stat-box.green {
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(5, 150, 105, 0.03) 100%);
-  border-color: rgba(5, 150, 105, 0.25);
+  border-left: 3px solid #10b981;
 }
 
 .stat-box.green::before {
-  background: linear-gradient(90deg, #059669, #047857);
+  background: linear-gradient(90deg, #10b981, #059669);
 }
 
 .stat-box:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 50px rgba(129, 140, 248, 0.2);
+  border-color: rgba(129, 140, 248, 0.3);
 }
 
 .stat-label {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -133,19 +138,21 @@
   font-weight: 800;
   margin-bottom: 0.6rem;
   letter-spacing: -1px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .stat-box.blue .stat-value {
-  color: var(--primary);
+  color: #60a5fa;
 }
 
 .stat-box.green .stat-value {
-  color: var(--success);
+  color: #34d399;
 }
 
 .stat-breakdown {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 600;
 }
 
@@ -154,11 +161,11 @@
    ========================================== */
 .breadcrumb-separator {
   margin: 0 0.5rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .breadcrumb a {
-  color: var(--primary);
+  color: #818cf8;
   text-decoration: none;
   cursor: pointer;
   font-weight: 700;
@@ -173,7 +180,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primary);
+  background: #818cf8;
   transition: width 0.3s ease;
 }
 
@@ -192,9 +199,10 @@
 .batches-section h3 {
   font-size: 1.6rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: white;
   margin-bottom: 2rem;
   letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .batches-grid {
@@ -207,13 +215,15 @@
    BATCH CARD
    ========================================== */
 .batch-card {
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-xl);
   padding: 0;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.4s ease;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -244,8 +254,8 @@
 
 .batch-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(30, 64, 175, 0.2);
+  box-shadow: 0 20px 50px rgba(129, 140, 248, 0.25);
+  border-color: rgba(129, 140, 248, 0.3);
 }
 
 .batch-card-header {
@@ -253,7 +263,7 @@
   align-items: center;
   gap: 1.25rem;
   padding: 1.75rem;
-  border-bottom: 1px solid var(--border-color-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .batch-icon {
@@ -266,22 +276,11 @@
   font-size: 1.8rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .batch-card:hover .batch-icon {
   transform: scale(1.1);
-}
-
-.batch-card.blue .batch-icon {
-  background: rgba(30, 64, 175, 0.12);
-}
-
-.batch-card.green .batch-icon {
-  background: rgba(5, 150, 105, 0.12);
-}
-
-.batch-card.purple .batch-icon {
-  background: rgba(124, 58, 237, 0.12);
 }
 
 .batch-title {
@@ -291,22 +290,23 @@
 .batch-title h4 {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: white;
   margin-bottom: 0.3rem;
   letter-spacing: -0.3px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .batch-title p {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
   font-weight: 600;
 }
 
 .batch-details {
-  background: var(--bg-page);
+  background: rgba(0, 0, 0, 0.1);
   padding: 1.1rem 1.75rem;
-  border-bottom: 1px solid var(--border-color-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
 }
 
@@ -321,13 +321,13 @@
 }
 
 .batch-details-label {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 700;
   font-size: 0.8rem;
 }
 
 .batch-details-value {
-  color: var(--text-primary);
+  color: white;
   font-weight: 800;
 }
 
@@ -342,19 +342,19 @@
 .batch-stat {
   text-align: center;
   padding: 1rem;
-  background: var(--bg-page);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: var(--radius-md);
   transition: all 0.3s ease;
 }
 
 .batch-stat:hover {
-  background: var(--primary-light);
+  background: rgba(129, 140, 248, 0.15);
   transform: translateY(-2px);
 }
 
 .batch-stat-label {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0.4rem;
@@ -364,24 +364,25 @@
 .batch-stat-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary);
+  color: #818cf8;
   letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .batch-stat-breakdown {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 0.4rem;
   font-weight: 600;
 }
 
 .batch-stat-breakdown .male {
-  color: #2563eb;
+  color: #60a5fa;
   font-weight: 800;
 }
 
 .batch-stat-breakdown .female {
-  color: #db2777;
+  color: #f472b6;
   font-weight: 800;
 }
 
@@ -390,7 +391,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: var(--primary);
+  color: #818cf8;
   font-weight: 700;
   font-size: 0.9rem;
   opacity: 0.7;
@@ -417,8 +418,8 @@
    ========================================== */
 .sem-label {
   display: inline-block;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: white;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1f2937;
   padding: 0.4rem 1rem;
   border-radius: var(--radius-md);
   font-size: 0.8rem;
