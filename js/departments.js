@@ -80,7 +80,7 @@ const departments = [
   {
     id: 8,
     name: 'Data Science',
-    code: 'CDS',
+    code: 'DSC',
     batches: 1,
     totalStudents: 56,
     male: 28,

@@ -35,8 +35,8 @@ const batchData = {
   'MCE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 59, male: 52, female: 7, color: 'green' },
   'MCE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 54, male: 47, female: 7, color: 'purple' },
 
-  // CDS (Data Science) - Only 2029
-  'CDS-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 56, male: 28, female: 28, color: 'purple' }
+  // DSC (Data Science) - Only 2029
+  'DSC-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 56, male: 28, female: 28, color: 'purple' }
 };
 
 const departmentIcons = {
@@ -47,7 +47,7 @@ const departmentIcons = {
   'EEE': '⚡',
   'IMT': '🖥️',
   'MCE': '⚙️',
-  'CDS': '📊'
+  'DSC': '📊'
 };
 
 const departmentNames = {
@@ -58,7 +58,7 @@ const departmentNames = {
   'EEE': 'Electrical and Electronics Engineering',
   'IMT': 'Information Technology',
   'MCE': 'Mechanical Engineering',
-  'CDS': 'Data Science'
+  'DSC': 'Data Science'
 };
 
 const departmentTotals = {
@@ -69,7 +69,7 @@ const departmentTotals = {
   'EEE': { total: 180, male: 106, female: 74 },
   'IMT': { total: 173, male: 89, female: 84 },
   'MCE': { total: 167, male: 147, female: 20 },
-  'CDS': { total: 56, male: 28, female: 28 }
+  'DSC': { total: 56, male: 28, female: 28 }
 };
 
 // Load batches on page load

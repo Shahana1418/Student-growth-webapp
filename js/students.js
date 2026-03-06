@@ -13,7 +13,7 @@ const departmentNames = {
   'EEE': 'Electrical and Electronics Engineering',
   'IMT': 'Information Technology',
   'MCE': 'Mechanical Engineering',
-  'CDS': 'Data Science'
+  'DSC': 'Data Science'
 };
 
 const batchInfo = {
@@ -38,7 +38,7 @@ const batchInfo = {
   'MCE-2027': { level: '3rd Year', joined: 2023, passing: 2027, sem: 6 },
   'MCE-2028': { level: '2nd Year', joined: 2024, passing: 2028, sem: 4 },
   'MCE-2029': { level: '1st Year', joined: 2025, passing: 2029, sem: 2 },
-  'CDS-2029': { level: '1st Year', joined: 2025, passing: 2029, sem: 2 }
+  'DSC-2029': { level: '1st Year', joined: 2025, passing: 2029, sem: 2 }
 };
 
 // Load students on page load
