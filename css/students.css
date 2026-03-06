@@ -409,6 +409,39 @@
 }
 
 /* ==========================================
+   GENERATE TEAMS SECTION
+   ========================================== */
+.generate-teams-section {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+.generate-teams-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.generate-teams-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+}
+
+.generate-teams-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ==========================================
    NO RESULTS
    ========================================== */
 .no-results {

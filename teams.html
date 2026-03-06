@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Teams - SAM System</title>
+  <link rel="stylesheet" href="css/style.css?v=23">
+  <link rel="stylesheet" href="css/teams.css?v=23">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>SAM System</h1>
+        <p>STUDENT ALUMNI MENTORSHIP</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="goBack()" style="margin-right: 0.5rem;">← Back</button>
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">
+      <a href="#" onclick="goHome()">GCE Erode</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="#" onclick="goToDepartment()"><span id="deptNameBreadcrumb">Department</span></a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="#" onclick="goBackToStudents()"><span id="batchBreadcrumb">Batch</span></a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Teams</span>
+    </span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="teams-container">
+    <!-- Header Section -->
+    <div class="teams-header">
+      <div class="header-left">
+        <div class="header-icon">👥</div>
+        <div class="header-info">
+          <h2 id="pageTitle">Teams Generated</h2>
+          <p id="pageSubtitle">Team allocation for batch</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teams Stats -->
+    <div class="teams-stats">
+      <div class="stat-card blue">
+        <div class="stat-label">TOTAL TEAMS</div>
+        <div class="stat-value" id="totalTeams">0</div>
+        <div class="stat-subtext">Teams Formed</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">TOTAL STUDENTS</div>
+        <div class="stat-value" id="totalStudents">0</div>
+        <div class="stat-subtext">Allocated to Teams</div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-label">AVG TEAM SIZE</div>
+        <div class="stat-value" id="avgTeamSize">0</div>
+        <div class="stat-subtext">Members per Team</div>
+      </div>
+    </div>
+
+    <!-- Teams Section -->
+    <div class="teams-section">
+      <h3>Team List</h3>
+      <div class="teams-grid" id="teamsGrid">
+        <!-- Teams will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="teams-actions">
+      <button class="action-btn back-btn" onclick="goBackToStudents()">
+        ← Back to Students
+      </button>
+      <button class="action-btn download-btn" onclick="downloadTeamsCSV()">
+        ⬇️ Download Teams
+      </button>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=23"></script>
+  <script src="js/teams.js?v=23"></script>
+</body>
+</html>
