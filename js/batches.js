@@ -1,4 +1,4 @@
-// Batch Data and Functions
+// Batch Data - Updated with actual class strength from student data
 const batchData = {
   // ATE (Automobile Engineering)
   'ATE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 49, male: 43, female: 6, color: 'blue' },
@@ -6,34 +6,34 @@ const batchData = {
   'ATE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 47, male: 38, female: 9, color: 'purple' },
 
   // CSE (Computer Science and Engineering)
-  'CSE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 52, male: 28, female: 24, color: 'blue' },
-  'CSE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 68, male: 35, female: 33, color: 'green' },
-  'CSE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 65, male: 19, female: 46, color: 'purple' },
+  'CSE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 64, male: 24, female: 40, color: 'blue' },
+  'CSE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 64, male: 32, female: 32, color: 'green' },
+  'CSE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 57, male: 26, female: 31, color: 'purple' },
 
   // CVE (Civil Engineering)
-  'CVE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 48, male: 24, female: 24, color: 'blue' },
-  'CVE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 54, male: 28, female: 26, color: 'green' },
-  'CVE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 54, male: 22, female: 32, color: 'purple' },
+  'CVE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 46, male: 27, female: 19, color: 'blue' },
+  'CVE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 60, male: 29, female: 31, color: 'green' },
+  'CVE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 50, male: 18, female: 32, color: 'purple' },
 
   // ECE (Electronics and Communication Engineering)
-  'ECE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 55, male: 35, female: 20, color: 'blue' },
-  'ECE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 63, male: 38, female: 25, color: 'green' },
-  'ECE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 65, male: 32, female: 33, color: 'purple' },
+  'ECE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 61, male: 27, female: 34, color: 'blue' },
+  'ECE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 66, male: 0, female: 0, color: 'green' },
+  'ECE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 56, male: 36, female: 20, color: 'purple' },
 
   // EEE (Electrical and Electronics Engineering)
-  'EEE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 54, male: 38, female: 16, color: 'blue' },
+  'EEE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 63, male: 41, female: 22, color: 'blue' },
   'EEE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 62, male: 40, female: 22, color: 'green' },
-  'EEE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 64, male: 28, female: 36, color: 'purple' },
+  'EEE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 55, male: 25, female: 30, color: 'purple' },
 
   // IMT (Information Technology)
-  'IMT-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 52, male: 30, female: 22, color: 'blue' },
-  'IMT-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 60, male: 33, female: 27, color: 'green' },
-  'IMT-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 61, male: 26, female: 35, color: 'purple' },
+  'IMT-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 61, male: 34, female: 27, color: 'blue' },
+  'IMT-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 57, male: 29, female: 28, color: 'green' },
+  'IMT-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 0, male: 0, female: 0, color: 'purple' },
 
   // MCE (Mechanical Engineering)
-  'MCE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 51, male: 48, female: 3, color: 'blue' },
-  'MCE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 58, male: 55, female: 3, color: 'green' },
-  'MCE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 58, male: 44, female: 14, color: 'purple' },
+  'MCE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 54, male: 48, female: 6, color: 'blue' },
+  'MCE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 59, male: 52, female: 7, color: 'green' },
+  'MCE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 54, male: 47, female: 7, color: 'purple' },
 
   // CDS (Data Science) - Only 2029
   'CDS-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 56, male: 28, female: 28, color: 'purple' }
@@ -101,6 +101,29 @@ function loadBatches() {
 
   // Get available batches for this department
   const availableBatches = getAvailableBatches(deptCode);
+
+  // Calculate actual total strength across all batches
+  const actualTotal = availableBatches.reduce((sum, year) => {
+    const batch = batchData[`${deptCode}-${year}`];
+    return sum + (batch ? batch.total : 0);
+  }, 0);
+
+  const actualMale = availableBatches.reduce((sum, year) => {
+    const batch = batchData[`${deptCode}-${year}`];
+    return sum + (batch ? batch.male : 0);
+  }, 0);
+
+  const actualFemale = availableBatches.reduce((sum, year) => {
+    const batch = batchData[`${deptCode}-${year}`];
+    return sum + (batch ? batch.female : 0);
+  }, 0);
+
+  // Update with actual totals
+  document.getElementById('totalStudents').textContent = actualTotal;
+  document.getElementById('maleCount').textContent = actualMale;
+  document.getElementById('femaleCount').textContent = actualFemale;
+  document.getElementById('deptCode').textContent = `${deptCode} · ${actualTotal} students across ${availableBatches.length} batches`;
+
   document.getElementById('batchCount').textContent = availableBatches.length;
   document.getElementById('batchYears').textContent = availableBatches.join(', ');
 

@@ -39,8 +39,8 @@ const departments = [
     code: 'ECE',
     batches: 3,
     totalStudents: 183,
-    male: 105,
-    female: 78,
+    male: 63,
+    female: 54,
     icon: '📱',
     color: 'ece'
   },
@@ -60,9 +60,9 @@ const departments = [
     name: 'Information Technology',
     code: 'IMT',
     batches: 3,
-    totalStudents: 173,
-    male: 89,
-    female: 84,
+    totalStudents: 118,
+    male: 63,
+    female: 55,
     icon: '🖥️',
     color: 'imt'
   },
