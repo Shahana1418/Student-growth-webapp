@@ -86,14 +86,19 @@ function updatePageHeader() {
   const batch = batchInfo[`${currentDept}-${currentBatch}`] || {};
   const level = batch.level || 'Unknown';
 
+  // Helper function to safely update element
+  const safeUpdate = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  };
+
   // Update breadcrumbs
-  document.getElementById('deptNameBreadcrumb').textContent = dept;
-  document.getElementById('batchBreadcrumb').textContent = `${currentBatch} Batch`;
+  safeUpdate('deptNameBreadcrumb', dept);
+  safeUpdate('batchBreadcrumb', `${currentBatch} Batch`);
 
   // Update header
-  document.getElementById('deptName').textContent = `${dept} — ${currentBatch} Batch (${level})`;
-  document.getElementById('batchInfo').textContent =
-    `${allStudents.length} students · ${currentDept} · Joined ${batch.joined} · Passing ${batch.passing} · Semester ${batch.sem}`;
+  safeUpdate('deptName', `${dept} — ${currentBatch} Batch (${level})`);
+  safeUpdate('batchInfo', `${allStudents.length} students · ${currentDept} · Joined ${batch.joined} · Passing ${batch.passing} · Semester ${batch.sem}`);
 
   // Calculate gender statistics
   const maleStudents = allStudents.filter(s => s.Gender === 'M').length;
@@ -102,14 +107,14 @@ function updatePageHeader() {
   const femalePercentage = allStudents.length ? Math.round((femaleStudents / allStudents.length) * 100) : 0;
 
   // Update stats
-  document.getElementById('totalStudents').textContent = allStudents.length;
-  document.getElementById('maleCount').textContent = maleStudents;
-  document.getElementById('malePercentage').textContent = `${malePercentage}%`;
-  document.getElementById('femaleCount').textContent = femaleStudents;
-  document.getElementById('femalePercentage').textContent = `${femalePercentage}%`;
-  document.getElementById('deptCodeText').textContent = `${currentDept} · ${currentBatch}`;
-  document.getElementById('semesterDisplay').textContent = `Sem ${batch.sem || 0}`;
-  document.getElementById('yearDisplay').textContent = `${level} · ${batch.joined}-${batch.passing}`;
+  safeUpdate('totalStudents', allStudents.length);
+  safeUpdate('maleCount', maleStudents);
+  safeUpdate('malePercentage', `${malePercentage}%`);
+  safeUpdate('femaleCount', femaleStudents);
+  safeUpdate('femalePercentage', `${femalePercentage}%`);
+  safeUpdate('deptCodeText', `${currentDept} · ${currentBatch}`);
+  safeUpdate('semesterDisplay', `Sem ${batch.sem || 0}`);
+  safeUpdate('yearDisplay', `${level} · ${batch.joined}-${batch.passing}`);
 }
 
 function displayStudents(students) {
