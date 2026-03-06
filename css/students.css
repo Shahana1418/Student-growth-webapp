@@ -5,7 +5,7 @@
 .students-container {
   min-height: calc(100vh - 130px);
   background: #f4f7fa;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem 3rem 2rem;
 }
 
 /* ==========================================
@@ -413,32 +413,40 @@
    ========================================== */
 .generate-teams-section {
   max-width: 1200px;
-  margin: 2rem auto 0;
+  margin: 2.5rem auto 0;
+  padding: 2rem 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .generate-teams-btn {
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   color: #ffffff;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
   letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .generate-teams-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.45);
   background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
 }
 
 .generate-teams-btn:active {
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
 /* ==========================================
