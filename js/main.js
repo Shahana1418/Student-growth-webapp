@@ -1,16 +1,13 @@
-// Navigation function for future pages
+// Navigation function
 function navigateTo(page) {
   console.log(`Navigating to: ${page}`);
 
-  // This will be implemented as we add more pages
   switch(page) {
     case 'login':
-      // window.location.href = '/pages/login.html';
-      alert('Login page will be implemented in Phase 2');
+      window.location.href = 'login.html';
       break;
     case 'departments':
-      // window.location.href = '/pages/departments.html';
-      alert('Departments page will be implemented in Phase 3');
+      window.location.href = 'departments.html';
       break;
     default:
       console.log('Unknown page:', page);

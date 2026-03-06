@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments - Student Growth System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/departments.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>Student Growth</h1>
+        <p>ALUMNI MENTORSHIP & DEVELOPMENT</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">GCE Erode</span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="departments-container">
+    <div class="departments-header">
+      <h2>Select a Department</h2>
+    </div>
+
+    <div class="departments-grid" id="departmentsGrid">
+      <!-- Departments will be loaded here by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Department Detail Modal -->
+  <div id="departmentModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeDepartmentModal()">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/departments.js"></script>
+</body>
+</html>
