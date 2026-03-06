@@ -4197,397 +4197,397 @@ const STUDENTS_DATA = {
 {
 "Student_ID": "24ECE01",
 "Name": "AATRAL A",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "aatral.ap2007@gmail.com"
 },
 {
 "Student_ID": "24ECE02",
 "Name": "AJAY M",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "aajay86951@gmail.com"
 },
 {
 "Student_ID": "24ECE03",
 "Name": "AJAY N",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "ajayn142006@gmail.com"
 },
 {
 "Student_ID": "24ECE04",
 "Name": "AKSHARA C.P",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "aksharacp07@gmail.com"
 },
 {
 "Student_ID": "24ECE05",
 "Name": "ANBARASU A",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "arasuanbu218@gmail.com"
 },
 {
 "Student_ID": "24ECE06",
 "Name": "ANUSHIYA G",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "anushiyaramesh0@gmail.com"
 },
 {
 "Student_ID": "24ECE07",
 "Name": "ARIVU SELVAM G",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "abishekgopi03@gmail.com"
 },
 {
 "Student_ID": "24ECE08",
 "Name": "BRAMMA G",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "bramma2102006@gmail.com"
 },
 {
 "Student_ID": "24ECE09",
 "Name": "DHARSHANA S",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "sdharshanasanthiya@gmail.com"
 },
 {
 "Student_ID": "24ECE10",
 "Name": "DHARSHINI P",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "dharshinidrkd@gmail.com"
 },
 {
 "Student_ID": "24ECE11",
 "Name": "DHIVYA B",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "dhivyabalakrishnan84@gmail.com"
 },
 {
 "Student_ID": "24ECE12",
 "Name": "DIVAKAR N",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "divakarpugal517@gmail.com"
 },
 {
 "Student_ID": "24ECE13",
 "Name": "ELAMURUGAN B",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "belamurugan76@gmail.com"
 },
 {
 "Student_ID": "24ECE15",
 "Name": "GODLIN GRANIA D",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "godlingrania06@gmail.com"
 },
 {
 "Student_ID": "24ECE16",
 "Name": "GOKUL G",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "abigokul631@gmail.com"
 },
 {
 "Student_ID": "24ECE17",
 "Name": "GOPIKA R",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "gopikaranjithkumar2006@gmail.com"
 },
 {
 "Student_ID": "24ECE18",
 "Name": "GURUVENI C",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "veniguru51@gmail.com"
 },
 {
 "Student_ID": "24ECE19",
 "Name": "HAARISH V.M",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "haarishmuthusamy2006@gmail.com"
 },
 {
 "Student_ID": "24ECE20",
 "Name": "ISHWARYA S",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "ishwaryagokila07@gmail.com"
 },
 {
 "Student_ID": "24ECE21",
 "Name": "JEEVA V",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "jeevagokul071@gmail.com"
 },
 {
 "Student_ID": "24ECE22",
 "Name": "JEFFRIN J",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "jeff07rin@gmail.com"
 },
 {
 "Student_ID": "24ECE23",
 "Name": "JEGATHEESWARAN P",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "jegatheeswaran.6304286@gmail.com"
 },
 {
 "Student_ID": "24ECE24",
 "Name": "JOYAL EM",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "joyalem7@gmail.com"
 },
 {
 "Student_ID": "24ECE25",
 "Name": "KANAGARAJ M",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "kanagaraj43284@gmail.com"
 },
 {
 "Student_ID": "24ECE26",
 "Name": "KARTHICK P",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "karthic756@gmail.com"
 },
 {
 "Student_ID": "24ECE27",
 "Name": "LATCHNA I",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "latchanai2006@gmail.com"
 },
 {
 "Student_ID": "24ECE28",
 "Name": "MADHUMITHA L",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "madhulaksh2@gmail.com"
 },
 {
 "Student_ID": "24ECE29",
 "Name": "MOHAMED SYED IBRAHIM A",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "liakatha5@gmail.com"
 },
 {
 "Student_ID": "24ECE30",
 "Name": "MOUNA KISHOR S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "mounakishor3@gmail.com"
 },
 {
 "Student_ID": "24ECE31",
 "Name": "MOHAMMAD HARUN S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "muhammadharun19151@gmail.com"
 },
 {
 "Student_ID": "24ECE32",
 "Name": "NALANKILL C",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "cnalankilli@gmail.com"
 },
 {
 "Student_ID": "24ECE33",
 "Name": "NITHILA DHARSHINI M",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "nithilamarikannan@gmail.com"
 },
 {
 "Student_ID": "24ECE34",
 "Name": "NITHYA K",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "nithya07042005@gmail.com"
 },
 {
 "Student_ID": "24ECE36",
 "Name": "PONSAKARI S",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "ponsankari07@gmail.com"
 },
 {
 "Student_ID": "24ECE37",
 "Name": "PRAVEENA R",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "praviram1912@gmail.com"
 },
 {
 "Student_ID": "24ECE38",
 "Name": "PREETHI V",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "vipreethi070428@gmail.com"
 },
 {
 "Student_ID": "24ECE39",
 "Name": "PRIME RS",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "rsprime265@gmail.com"
 },
 {
 "Student_ID": "24ECE41",
 "Name": "SANJITH N.C",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sansanjith459@gmail.com"
 },
 {
 "Student_ID": "24ECE42",
 "Name": "SANTHOSH D",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "santhoshofficial0001@gmail.com"
 },
 {
 "Student_ID": "24ECE43",
 "Name": "SATHISH BABU S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sathishsrinivasan9597@gmail.com"
 },
 {
 "Student_ID": "24ECE44",
 "Name": "SHANMUGA NITHEESH S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "nith5651@gmail.com"
 },
 {
 "Student_ID": "24ECE45",
 "Name": "SHRUTHI K",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "shruthikannan9047@gmail.com"
 },
 {
 "Student_ID": "24ECE46",
 "Name": "SIVA PRASANTH B",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sivaprasathbala74@gmail.com"
 },
 {
 "Student_ID": "24ECE47",
 "Name": "SRIRAM T",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "kksthala1@gmail.com"
 },
 {
 "Student_ID": "24ECE48",
 "Name": "SUBHASRI B",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "srisubha327@gmail.com"
 },
 {
 "Student_ID": "24ECE49",
 "Name": "SUDARSANAM R",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sudarsanam2006@gmail.com"
 },
 {
 "Student_ID": "24ECE51",
 "Name": "SUGUMAR K",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sugumarkailasamathani@gmail.com"
 },
 {
 "Student_ID": "24ECE52",
 "Name": "SURIYA K.S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "k.s.suriya345@gmail.com"
 },
 {
 "Student_ID": "24ECE54",
 "Name": "VARSHA S",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "varshaeve24@gmail.com"
 },
 {
 "Student_ID": "24ECE55",
 "Name": "VARSHAVARTHINI R",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "varshavarthiniranjith007@gmail.com"
 },
 {
 "Student_ID": "24ECE56",
 "Name": "VARSHINI M",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "varshinimaruthappapandian@gmail.com"
 },
 {
 "Student_ID": "24ECE57",
 "Name": "VISHAL G.S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "vishalsaran2006@gmail.com"
 },
 {
 "Student_ID": "24ECE54",
 "Name": "YALINI PRABHA K",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "yaliniprabhakrishnan@gmail.com"
 },
 {
 "Student_ID": "24ECE59L",
 "Name": "DEVA V",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "jeevadeva2020@gmail.com"
 },
 {
 "Student_ID": "24ECE60L",
 "Name": "DHIYANESH J R",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "dhiyaneshd8@gmail.com"
 },
 {
 "Student_ID": "24ECE61L",
 "Name": "HARISH R",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "legend71845@gmail.com"
 },
 {
 "Student_ID": "24ECE62L",
 "Name": "LOGANATHAN V",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": ""
 },
 {
 "Student_ID": "24ECE63L",
 "Name": "PRASANNA S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "prasanna.sharni@gmail.com"
 },
 {
 "Student_ID": "24ECE64L",
 "Name": "PRIYADHARSHINI K",
-"Gender": "FEMALE",
+"Gender": "F",
 "Email_ID": "Priyak08052006@gmail.com"
 },
 {
 "Student_ID": "24ECE65L",
 "Name": "SRIRAM T",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": ""
 },
 {
 "Student_ID": "24ECE66L",
 "Name": "TAMIZHARASAN V",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "tamilzharasan590@gmail.com"
 },
 {
 "Student_ID": "24ECE67T",
 "Name": "KAVIN S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "kavinselvaraj2231@gmail.com"
 },
 {
 "Student_ID": "24ECE68T",
 "Name": "PRANAV P",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "pranavparthiban8557@gmail.com"
 },
 {
 "Student_ID": "24ECE69T",
 "Name": "SANJAY S",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sanjaysaravanan576@gmail.com"
 },
 {
 "Student_ID": "24ECE70T",
 "Name": "SRIDHARSHAN A",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "sridharshan07a@gmail.com"
 },
 {
 "Student_ID": "24ECE71T",
 "Name": "YASHWANTHAN",
-"Gender": "MALE",
+"Gender": "M",
 "Email_ID": "yashwanthan 26@gmail.com"
 }
 ],

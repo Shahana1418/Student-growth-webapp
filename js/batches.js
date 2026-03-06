@@ -17,7 +17,7 @@ const batchData = {
 
   // ECE (Electronics and Communication Engineering)
   'ECE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 61, male: 27, female: 34, color: 'blue' },
-  'ECE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 66, male: 0, female: 0, color: 'green' },
+  'ECE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 66, male: 42, female: 24, color: 'green' },
   'ECE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 56, male: 36, female: 20, color: 'purple' },
 
   // EEE (Electrical and Electronics Engineering)
