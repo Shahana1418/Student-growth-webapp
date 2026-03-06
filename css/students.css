@@ -196,7 +196,7 @@
    ========================================== */
 .roster-section {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   background: #ffffff;
   padding: 1.25rem 1.5rem;
   border-radius: 12px;
@@ -412,13 +412,17 @@
    GENERATE TEAMS SECTION
    ========================================== */
 .generate-teams-section {
+  width: 100%;
   max-width: 1200px;
-  margin: 2.5rem auto 0;
+  margin: 3rem auto 0;
   padding: 2rem 0;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
+  position: relative;
+  z-index: 10;
 }
 
 .generate-teams-btn {
@@ -436,6 +440,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  white-space: nowrap;
+  visibility: visible;
 }
 
 .generate-teams-btn:hover {
