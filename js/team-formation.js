@@ -1,5 +1,5 @@
 // Team Formation Logic - Phase 1
-// Rules: Only sizes 4 & 5, divisible by 3 teams, gender balanced per rules
+// Rules: Only sizes 4 & 5, gender balanced per rules
 
 class TeamFormation {
   constructor(students) {
@@ -9,29 +9,23 @@ class TeamFormation {
     this.teams = [];
   }
 
-  // Validate gender composition
   isValidGenderComposition(maleCount, femaleCount) {
     const total = maleCount + femaleCount;
-
     if (total === 4) {
       return (maleCount === 2 && femaleCount === 2) ||
              (maleCount === 4 && femaleCount === 0) ||
              (maleCount === 0 && femaleCount === 4);
     }
-
     if (total === 5) {
       return (maleCount === 5 && femaleCount === 0) ||
              (maleCount === 0 && femaleCount === 5) ||
              (maleCount === 3 && femaleCount === 2) ||
              (maleCount === 2 && femaleCount === 3);
     }
-
     return false;
   }
 
-  // Calculate team size distribution
   calculateTeamSizes(totalStudents, numTeams) {
-    // Find valid distribution: 4x + 5y = totalStudents where x + y = numTeams
     for (let num5 = 0; num5 <= numTeams; num5++) {
       const num4 = numTeams - num5;
       if ((num4 * 4) + (num5 * 5) === totalStudents) {
@@ -44,70 +38,77 @@ class TeamFormation {
     return null;
   }
 
-  // Plan gender distribution for teams
+  // Smart gender distribution planner
   planGenderDistribution(teamSizes, maleCount, femaleCount) {
     const distribution = [];
-    let remainingMale = maleCount;
-    let remainingFemale = femaleCount;
 
-    for (const size of teamSizes) {
-      let composition = null;
+    // Count teams of each size
+    const num4 = teamSizes.filter(s => s === 4).length;
+    const num5 = teamSizes.filter(s => s === 5).length;
 
-      if (size === 4) {
-        // Try 2M:2F first if we have enough
-        if (remainingMale >= 2 && remainingFemale >= 2) {
-          composition = { male: 2, female: 2 };
-        }
-        // Try all one gender
-        else if (remainingMale >= 4) {
-          composition = { male: 4, female: 0 };
-        }
-        else if (remainingFemale >= 4) {
-          composition = { male: 0, female: 4 };
-        }
-        else {
-          return null; // Can't form valid team of 4
+    console.log(`Planning distribution: ${num4} teams of 4, ${num5} teams of 5`);
+    console.log(`Available: ${maleCount}M, ${femaleCount}F`);
+
+    // Try to find a valid allocation
+    // For size 4: can be (2M:2F), (4M:0F), (0M:4F)
+    // For size 5: can be (3M:2F), (2M:3F), (5M:0F), (0M:5F)
+
+    // Try all combinations of size-4 team compositions
+    for (let t4_2m2f = 0; t4_2m2f <= num4; t4_2m2f++) {
+      for (let t4_4m0f = 0; t4_4m0f <= num4 - t4_2m2f; t4_4m0f++) {
+        const t4_0m4f = num4 - t4_2m2f - t4_4m0f;
+
+        // Calculate males/females used by size-4 teams
+        const m4 = (t4_2m2f * 2) + (t4_4m0f * 4) + (t4_0m4f * 0);
+        const f4 = (t4_2m2f * 2) + (t4_4m0f * 0) + (t4_0m4f * 4);
+
+        // Remaining for size-5 teams
+        const mRemain = maleCount - m4;
+        const fRemain = femaleCount - f4;
+
+        if (mRemain < 0 || fRemain < 0) continue;
+
+        // Try all combinations of size-5 team compositions
+        for (let t5_3m2f = 0; t5_3m2f <= num5; t5_3m2f++) {
+          for (let t5_2m3f = 0; t5_2m3f <= num5 - t5_3m2f; t5_2m3f++) {
+            for (let t5_5m0f = 0; t5_5m0f <= num5 - t5_3m2f - t5_2m3f; t5_5m0f++) {
+              const t5_0m5f = num5 - t5_3m2f - t5_2m3f - t5_5m0f;
+
+              // Calculate males/females used by size-5 teams
+              const m5 = (t5_3m2f * 3) + (t5_2m3f * 2) + (t5_5m0f * 5) + (t5_0m5f * 0);
+              const f5 = (t5_3m2f * 2) + (t5_2m3f * 3) + (t5_5m0f * 0) + (t5_0m5f * 5);
+
+              // Check if this allocation works
+              if (m5 === mRemain && f5 === fRemain) {
+                console.log(`✓ Found valid distribution!`);
+                console.log(`  Size 4: ${t4_2m2f}×(2M:2F) + ${t4_4m0f}×(4M:0F) + ${t4_0m4f}×(0M:4F)`);
+                console.log(`  Size 5: ${t5_3m2f}×(3M:2F) + ${t5_2m3f}×(2M:3F) + ${t5_5m0f}×(5M:0F) + ${t5_0m5f}×(0M:5F)`);
+
+                // Build the distribution array
+                const dist = [];
+                // Size 4 teams
+                for (let i = 0; i < t4_2m2f; i++) dist.push({ male: 2, female: 2 });
+                for (let i = 0; i < t4_4m0f; i++) dist.push({ male: 4, female: 0 });
+                for (let i = 0; i < t4_0m4f; i++) dist.push({ male: 0, female: 4 });
+                // Size 5 teams
+                for (let i = 0; i < t5_3m2f; i++) dist.push({ male: 3, female: 2 });
+                for (let i = 0; i < t5_2m3f; i++) dist.push({ male: 2, female: 3 });
+                for (let i = 0; i < t5_5m0f; i++) dist.push({ male: 5, female: 0 });
+                for (let i = 0; i < t5_0m5f; i++) dist.push({ male: 0, female: 5 });
+
+                return dist;
+              }
+            }
+          }
         }
       }
-      else if (size === 5) {
-        // Try 3M:2F first
-        if (remainingMale >= 3 && remainingFemale >= 2) {
-          composition = { male: 3, female: 2 };
-        }
-        // Try 2M:3F
-        else if (remainingMale >= 2 && remainingFemale >= 3) {
-          composition = { male: 2, female: 3 };
-        }
-        // Try all one gender
-        else if (remainingMale >= 5) {
-          composition = { male: 5, female: 0 };
-        }
-        else if (remainingFemale >= 5) {
-          composition = { male: 0, female: 5 };
-        }
-        else {
-          return null; // Can't form valid team of 5
-        }
-      }
-
-      if (!composition) return null;
-
-      distribution.push(composition);
-      remainingMale -= composition.male;
-      remainingFemale -= composition.female;
     }
 
-    // Check if all students are allocated
-    if (remainingMale === 0 && remainingFemale === 0) {
-      return distribution;
-    }
-
+    console.log(`✗ Could not find valid gender distribution`);
     return null;
   }
 
-  // Assign actual students to teams based on planned distribution
   assignStudentsToTeams(teamSizes, genderDistribution) {
-    // Shuffle students
     const shuffledMale = this.shuffleArray([...this.maleStudents]);
     const shuffledFemale = this.shuffleArray([...this.femaleStudents]);
 
@@ -138,7 +139,7 @@ class TeamFormation {
       team.femaleCount = composition.female;
 
       if (team.members.length !== size) {
-        console.log(`Error: Team size mismatch. Expected ${size}, got ${team.members.length}`);
+        console.log(`Error: Team size mismatch`);
         return null;
       }
 
@@ -148,7 +149,6 @@ class TeamFormation {
     return teams;
   }
 
-  // Main generation logic
   generateTeams() {
     const totalStudents = this.students.length;
     const maleCount = this.maleStudents.length;
@@ -162,53 +162,45 @@ class TeamFormation {
 
     console.log(`Valid team range: ${minTeams} to ${maxTeams} teams`);
 
-    // First pass: Try each valid number of teams divisible by 3
+    // First pass: divisible by 3
     console.log(`\nFirst pass: Looking for teams divisible by 3...`);
     for (let numTeams = minTeams; numTeams <= maxTeams; numTeams++) {
       if (numTeams % 3 !== 0) continue;
-
       const result = this.tryFormTeams(numTeams, totalStudents, maleCount, femaleCount);
       if (result.success) return result;
     }
 
-    // Second pass: If divisible by 3 fails, try ANY valid configuration
+    // Second pass: any valid configuration
     console.log(`\nSecond pass: Looking for ANY valid team configuration...`);
     for (let numTeams = minTeams; numTeams <= maxTeams; numTeams++) {
-      if (numTeams % 3 === 0) continue; // Skip ones we already tried
-
+      if (numTeams % 3 === 0) continue;
       const result = this.tryFormTeams(numTeams, totalStudents, maleCount, femaleCount);
       if (result.success) {
-        console.warn(`⚠️ Note: ${numTeams} teams is not divisible by 3, but it's the best we can do`);
+        console.warn(`⚠️ Note: ${numTeams} teams (not divisible by 3)`);
         return result;
       }
     }
 
-    return { success: false, error: 'Could not find valid team configuration for this batch size' };
+    return { success: false, error: 'Could not find valid team configuration' };
   }
 
-  // Try to form teams with a specific number
   tryFormTeams(numTeams, totalStudents, maleCount, femaleCount) {
     console.log(`\nTrying ${numTeams} teams...`);
 
-    // Get team size distribution
     const teamSizes = this.calculateTeamSizes(totalStudents, numTeams);
     if (!teamSizes) {
-      console.log(`  No valid size distribution for ${numTeams} teams`);
+      console.log(`  No valid size distribution`);
       return { success: false };
     }
 
-    console.log(`  Size distribution: ${teamSizes.join(', ')}`);
+    console.log(`  Sizes: ${teamSizes.join(', ')}`);
 
-    // Plan gender composition
     const genderDist = this.planGenderDistribution(teamSizes, maleCount, femaleCount);
     if (!genderDist) {
-      console.log(`  Cannot distribute genders for ${numTeams} teams`);
+      console.log(`  Cannot distribute genders`);
       return { success: false };
     }
 
-    console.log(`  Gender distribution planned successfully`);
-
-    // Assign students
     const teams = this.assignStudentsToTeams(teamSizes, genderDist);
     if (teams && teams.length === numTeams) {
       console.log(`✓ Successfully formed ${numTeams} teams!`);
@@ -219,7 +211,6 @@ class TeamFormation {
     return { success: false };
   }
 
-  // Shuffle array
   shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -229,7 +220,6 @@ class TeamFormation {
   }
 }
 
-// Generate teams function
 function generateTeamsForBatch() {
   console.clear();
   console.log('=== TEAM GENERATION STARTED ===');
@@ -250,7 +240,6 @@ function generateTeamsForBatch() {
   if (result.success) {
     console.log('✓ Teams generated successfully!');
     console.log(`Teams: ${result.teams.length}`);
-    console.log('Team breakdown:', result.teams.map(t => `${t.maleCount}M:${t.femaleCount}F`).join(', '));
 
     sessionStorage.setItem('generatedTeams', JSON.stringify({
       dept: currentDept,
@@ -267,6 +256,6 @@ function generateTeamsForBatch() {
     window.location.href = 'teams.html';
   } else {
     console.error('✗ Team generation failed:', result.error);
-    alert('❌ Could not generate valid teams\n\nOpen Console (F12) to see details');
+    alert('❌ Could not generate valid teams\n\nCheck Console (F12) for details');
   }
 }
