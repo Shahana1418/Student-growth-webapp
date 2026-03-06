@@ -142,7 +142,7 @@ function loadBatches() {
 }
 
 function getAvailableBatches(deptCode) {
-  if (deptCode === 'CDS') {
+  if (deptCode === 'DSC') {
     return [2029];
   }
   return [2027, 2028, 2029];
