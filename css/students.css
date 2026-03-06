@@ -577,6 +577,10 @@
 }
 
 @media (max-width: 480px) {
+  .students-container {
+    padding: 1.5rem 1rem 2.5rem 1rem;
+  }
+
   .students-header {
     flex-direction: column;
     text-align: center;
@@ -663,5 +667,15 @@
   .roster-section h3 {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+  }
+
+  .generate-teams-section {
+    margin: 1.5rem auto 0;
+    padding: 1.5rem 0;
+  }
+
+  .generate-teams-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
