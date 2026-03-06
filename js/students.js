@@ -64,6 +64,9 @@ async function loadStudents() {
   // Load student data
   try {
     const response = await fetch('data/students.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const studentsData = await response.json();
 
     const key = `${currentDept}-${currentBatch}`;
@@ -74,7 +77,8 @@ async function loadStudents() {
     displayStudents(allStudents);
   } catch (error) {
     console.error('Error loading students:', error);
-    document.getElementById('studentsTableBody').innerHTML = '<tr><td colspan="6">Error loading student data</td></tr>';
+    const tbody = document.getElementById('studentsTableBody');
+    tbody.innerHTML = '<tr><td colspan="4">Error loading student data. Please refresh the page.</td></tr>';
   }
 }
 
