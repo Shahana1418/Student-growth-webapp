@@ -4,7 +4,7 @@
 
 .batches-container {
   min-height: calc(100vh - 130px);
-  background: #ffffff;
+  background: #f4f7fa;
   padding: 1.5rem 2rem;
 }
 
@@ -76,12 +76,12 @@
 }
 
 .stat-box {
-  background: #f0f9ff;
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   text-align: center;
-  border: 1px solid #bfdbfe;
+  border: 1px solid #e2e8f0;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -124,7 +124,7 @@
   font-size: 0.8rem;
   color: #64748b;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
@@ -214,7 +214,7 @@
   background: #ffffff;
   border-radius: 12px;
   padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: all 0.4s ease;
   border: 1px solid #e2e8f0;
@@ -257,7 +257,7 @@
   align-items: center;
   gap: 1.25rem;
   padding: 1.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .batch-icon {
@@ -270,7 +270,8 @@
   font-size: 1.8rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
+  background: #f0f9ff;
+  color: #1e40af;
 }
 
 .batch-card:hover .batch-icon {
@@ -292,15 +293,15 @@
 
 .batch-title p {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #64748b;
   margin: 0;
   font-weight: 600;
 }
 
 .batch-details {
-  background: rgba(0, 0, 0, 0.1);
+  background: #f9fafb;
   padding: 1.1rem 1.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e2e8f0;
   font-size: 0.9rem;
 }
 
@@ -315,7 +316,7 @@
 }
 
 .batch-details-label {
-  color: rgba(255, 255, 255, 0.6);
+  color: #64748b;
   font-weight: 700;
   font-size: 0.8rem;
 }
@@ -336,19 +337,19 @@
 .batch-stat {
   text-align: center;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.15);
+  background: #f1f5f9;
   border-radius: var(--radius-md);
   transition: all 0.3s ease;
 }
 
 .batch-stat:hover {
-  background: rgba(129, 140, 248, 0.15);
+  background: #e2e8f0;
   transform: translateY(-2px);
 }
 
 .batch-stat-label {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #64748b;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0.4rem;
@@ -358,25 +359,25 @@
 .batch-stat-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #818cf8;
+  color: #1e40af;
   letter-spacing: -0.5px;
   font-family: 'Poppins', sans-serif;
 }
 
 .batch-stat-breakdown {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #64748b;
   margin-top: 0.4rem;
   font-weight: 600;
 }
 
 .batch-stat-breakdown .male {
-  color: #60a5fa;
+  color: #1e40af;
   font-weight: 800;
 }
 
 .batch-stat-breakdown .female {
-  color: #f472b6;
+  color: #be185d;
   font-weight: 800;
 }
 
@@ -385,10 +386,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #818cf8;
+  color: #1e40af;
   font-weight: 700;
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: all 0.3s ease;
 }
 

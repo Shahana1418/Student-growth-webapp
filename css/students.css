@@ -4,7 +4,7 @@
 
 .students-container {
   min-height: calc(100vh - 130px);
-  background: #ffffff;
+  background: #f4f7fa;
   padding: 1.5rem 2rem;
 }
 
@@ -75,11 +75,11 @@
 }
 
 .stat-card {
-  background: #f0f9ff;
+  background: #ffffff;
   padding: 1.25rem 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  border: 1px solid #bfdbfe;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
   text-align: center;
   transition: all 0.4s ease;
   position: relative;
@@ -163,19 +163,19 @@
 }
 
 .stat-card.blue .stat-value {
-  color: #60a5fa;
+  color: #1e40af;
 }
 
 .stat-card.green .stat-value {
-  color: #34d399;
+  color: #059669;
 }
 
 .stat-card.purple .stat-value {
-  color: #d8b4fe;
+  color: #7c3aed;
 }
 
 .stat-card.orange .stat-value {
-  color: #fcd34d;
+  color: #f59e0b;
 }
 
 .stat-subtext {
@@ -350,7 +350,7 @@
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #f1f5f9;
   font-size: 0.9rem;
-  color: #475569;
+  color: #0f172a;
   font-weight: 500;
 }
 
@@ -386,23 +386,25 @@
   height: 32px;
   border-radius: 50%;
   font-weight: 700;
-  color: #0f172a;
+  color: #ffffff;
   font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .gender-badge:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .gender-badge.male {
-  background: linear-gradient(135deg, #2563eb, #1e40af);
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  color: #ffffff;
 }
 
 .gender-badge.female {
-  background: linear-gradient(135deg, #db2777, #be185d);
+  background: linear-gradient(135deg, #be185d, #9d174d);
+  color: #ffffff;
 }
 
 /* ==========================================

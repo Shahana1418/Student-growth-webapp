@@ -4,7 +4,7 @@
 
 .departments-container {
   min-height: calc(100vh - 130px);
-  background: #ffffff;
+  background: #f4f7fa;
   padding: 1.5rem 2rem;
 }
 
@@ -49,51 +49,58 @@
   display: flex;
   flex-direction: column;
   min-height: 260px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .department-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  z-index: 2;
 }
 
 .department-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
 }
 
 .department-card.ate::before {
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
 }
 
 .department-card.cse::before {
-  background: linear-gradient(135deg, #064e3b, #10b981);
+  background: linear-gradient(90deg, #064e3b, #10b981);
 }
 
 .department-card.cve::before {
-  background: linear-gradient(135deg, #4c1d95, #8b5cf6);
+  background: linear-gradient(90deg, #4c1d95, #8b5cf6);
 }
 
 .department-card.ece::before {
-  background: linear-gradient(135deg, #78350f, #f59e0b);
+  background: linear-gradient(90deg, #78350f, #f59e0b);
 }
 
 .department-card.eee::before {
-  background: linear-gradient(135deg, #164e63, #06b6d4);
+  background: linear-gradient(90deg, #164e63, #06b6d4);
 }
 
 .department-card.imt::before {
-  background: linear-gradient(135deg, #831843, #ec4899);
+  background: linear-gradient(90deg, #831843, #ec4899);
 }
 
 .department-card.mce::before {
-  background: linear-gradient(135deg, #1e293b, #64748b);
+  background: linear-gradient(90deg, #1e293b, #64748b);
 }
 
 .department-card.cds::before {
-  background: linear-gradient(135deg, #881337, #f43f5e);
+  background: linear-gradient(90deg, #881337, #f43f5e);
 }
 
 .department-header {
@@ -102,7 +109,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid #e2e8f0;
   position: relative;
   z-index: 2;
   text-align: left;
@@ -118,7 +125,8 @@
   font-size: 1.4rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
-  background: rgba(255, 255, 255, 0.15);
+  background: #f0f9ff;
+  color: #1e40af;
 }
 
 .department-card:hover .department-icon {
@@ -128,7 +136,7 @@
 .department-info h3 {
   font-size: 1.05rem;
   font-weight: 800;
-  color: white;
+  color: #0f172a;
   margin-bottom: 0.2rem;
   letter-spacing: -0.3px;
   font-family: 'Poppins', sans-serif;
@@ -136,7 +144,7 @@
 
 .department-info p {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #64748b;
   margin: 0;
   font-weight: 500;
 }
@@ -158,18 +166,18 @@
   justify-content: center;
   gap: 0.2rem;
   padding: 0.5rem 0.4rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: #f1f5f9;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .stat-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #e2e8f0;
 }
 
 .stat-item .label {
   font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #64748b;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -178,16 +186,16 @@
 .stat-item .value {
   font-size: 0.95rem;
   font-weight: 800;
-  color: white;
+  color: #0f172a;
   font-family: 'Poppins', sans-serif;
 }
 
 .stat-item.male .value {
-  color: #60a5fa;
+  color: #1e40af;
 }
 
 .stat-item.female .value {
-  color: #f472b6;
+  color: #be185d;
 }
 
 .department-action {
@@ -195,10 +203,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(255, 255, 255, 0.8);
+  color: #1e40af;
   font-weight: 700;
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
