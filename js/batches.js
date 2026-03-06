@@ -28,7 +28,7 @@ const batchData = {
   // IMT (Information Technology)
   'IMT-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 61, male: 34, female: 27, color: 'blue' },
   'IMT-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 57, male: 29, female: 28, color: 'green' },
-  'IMT-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 0, male: 0, female: 0, color: 'purple' },
+  'IMT-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 55, male: 26, female: 29, color: 'purple' },
 
   // MCE (Mechanical Engineering)
   'MCE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 54, male: 48, female: 6, color: 'blue' },

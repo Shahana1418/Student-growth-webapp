@@ -60,9 +60,9 @@ const departments = [
     name: 'Information Technology',
     code: 'IMT',
     batches: 3,
-    totalStudents: 118,
-    male: 63,
-    female: 55,
+    totalStudents: 173,
+    male: 89,
+    female: 84,
     icon: '🖥️',
     color: 'imt'
   },
