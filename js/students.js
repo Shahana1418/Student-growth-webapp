@@ -130,14 +130,8 @@ function displayStudents(students) {
           ${student.Gender === 'M' ? '👨' : '👩'}
         </span>
       </td>
-      <td>${student['Entry Type'] || '-'}</td>
       <td style="font-size: 0.85rem; color: #0066cc;">
         ${student.Email_ID || '-'}
-      </td>
-      <td>
-        <span class="cgpa-value ${!student.CGPA || student.CGPA === '' ? 'empty' : ''}">
-          ${student.CGPA || 'N/A'}
-        </span>
       </td>
     </tr>
   `).join('');
