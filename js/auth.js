@@ -1,6 +1,10 @@
 // Authentication System
+// Using localStorage for persistent login across page refreshes
 
 const ADMIN_PASSWORD = 'Admin';
+
+// Protected pages that require authentication
+const PROTECTED_PAGES = ['departments.html', 'batches.html', 'students.html', 'teams.html'];
 
 function handleLogin(event) {
   event.preventDefault();
@@ -9,8 +13,8 @@ function handleLogin(event) {
   const errorMessage = document.getElementById('errorMessage');
 
   if (password === ADMIN_PASSWORD) {
-    // Store session
-    sessionStorage.setItem('isLoggedIn', 'true');
+    // Store session in localStorage (persists across page refresh)
+    localStorage.setItem('isLoggedIn', 'true');
     errorMessage.classList.remove('show');
 
     // Redirect to departments page
@@ -29,17 +33,29 @@ function goHome() {
 }
 
 function handleLogout() {
-  sessionStorage.removeItem('isLoggedIn');
+  // Clear all session data
+  localStorage.removeItem('isLoggedIn');
+  sessionStorage.removeItem('selectedDept');
+  sessionStorage.removeItem('selectedBatch');
+  sessionStorage.removeItem('generatedTeams');
   window.location.href = 'index.html';
 }
 
-// Check if user is logged in on departments page
+// Check if user is logged in
 function checkAuth() {
-  if (window.location.pathname.includes('departments.html')) {
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-      window.location.href = 'login.html';
-    }
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+  // Check if current page is a protected page
+  const isProtectedPage = PROTECTED_PAGES.some(page => currentPage.includes(page));
+
+  if (isProtectedPage && !isLoggedIn) {
+    window.location.href = 'login.html';
+  }
+
+  // If on login page but already logged in, redirect to departments
+  if (currentPage.includes('login.html') && isLoggedIn) {
+    window.location.href = 'departments.html';
   }
 }
 

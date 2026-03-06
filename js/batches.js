@@ -210,8 +210,9 @@ function goBack() {
 }
 
 function handleLogout() {
-  sessionStorage.removeItem('isLoggedIn');
+  localStorage.removeItem('isLoggedIn');
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
+  sessionStorage.removeItem('generatedTeams');
   window.location.href = 'index.html';
 }

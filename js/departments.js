@@ -209,3 +209,16 @@ document.addEventListener('keydown', function(event) {
     closeDepartmentModal();
   }
 });
+
+// Navigation functions
+function goHome() {
+  window.location.href = 'index.html';
+}
+
+function handleLogout() {
+  localStorage.removeItem('isLoggedIn');
+  sessionStorage.removeItem('selectedDept');
+  sessionStorage.removeItem('selectedBatch');
+  sessionStorage.removeItem('generatedTeams');
+  window.location.href = 'index.html';
+}

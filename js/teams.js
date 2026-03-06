@@ -134,7 +134,7 @@ function goToDepartment() {
 }
 
 function handleLogout() {
-  sessionStorage.removeItem('isLoggedIn');
+  localStorage.removeItem('isLoggedIn');
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
