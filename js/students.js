@@ -110,7 +110,6 @@ function updatePageHeader() {
   document.getElementById('deptCodeText').textContent = `${currentDept} · ${currentBatch}`;
   document.getElementById('semesterDisplay').textContent = `Sem ${batch.sem || 0}`;
   document.getElementById('yearDisplay').textContent = `${level} · ${batch.joined}-${batch.passing}`;
-  document.getElementById('studentCount').textContent = `${allStudents.length} students`;
 }
 
 function displayStudents(students) {
@@ -155,7 +154,6 @@ function filterStudents() {
     return matchesSearch && matchesGender;
   });
 
-  document.getElementById('studentCount').textContent = `${filtered.length} students`;
   displayStudents(filtered);
 }
 
