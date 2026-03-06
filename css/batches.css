@@ -270,8 +270,20 @@
   font-size: 2rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
-  background: transparent;
+  background: #f0f9ff;
   line-height: 1;
+}
+
+.batch-card.blue .batch-icon {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.batch-card.green .batch-icon {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.batch-card.purple .batch-icon {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
 }
 
 .batch-card:hover .batch-icon {
