@@ -63,10 +63,32 @@ async function loadStudents() {
 
   // Load student data
   try {
-    const response = await fetch('data/students.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    // Try multiple fetch paths for compatibility
+    let response;
+    let fetchPaths = [
+      'data/students.json',
+      './data/students.json',
+      '/Student-growth-webapp/data/students.json'
+    ];
+
+    let lastError = null;
+    for (let path of fetchPaths) {
+      try {
+        response = await fetch(path);
+        if (response.ok) {
+          console.log(`Successfully fetched from: ${path}`);
+          break;
+        }
+      } catch (e) {
+        lastError = e;
+        continue;
+      }
     }
+
+    if (!response || !response.ok) {
+      throw lastError || new Error(`HTTP error! status: ${response?.status || 'unknown'}`);
+    }
+
     const studentsData = await response.json();
 
     const key = `${currentDept}-${currentBatch}`;
@@ -78,7 +100,7 @@ async function loadStudents() {
   } catch (error) {
     console.error('Error loading students:', error);
     const tbody = document.getElementById('studentsTableBody');
-    tbody.innerHTML = '<tr><td colspan="4">Error loading student data. Please refresh the page.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4">Error loading student data. Trying alternate paths...</td></tr>';
   }
 }
 
