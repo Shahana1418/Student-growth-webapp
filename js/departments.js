@@ -5,8 +5,8 @@ const departments = [
     name: 'Automobile Engineering',
     code: 'ATE',
     batches: 3,
-    totalStudents: 154,
-    male: 126,
+    totalStudents: 155,
+    male: 127,
     female: 28,
     icon: '🚗',
     color: 'ate'
@@ -27,8 +27,8 @@ const departments = [
     name: 'Civil Engineering',
     code: 'CVE',
     batches: 3,
-    totalStudents: 156,
-    male: 74,
+    totalStudents: 155,
+    male: 73,
     female: 82,
     icon: '🏗️',
     color: 'cve'

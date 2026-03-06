@@ -3,7 +3,7 @@ const batchData = {
   // ATE (Automobile Engineering)
   'ATE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 49, male: 43, female: 6, color: 'blue' },
   'ATE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 58, male: 45, female: 13, color: 'green' },
-  'ATE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 47, male: 38, female: 9, color: 'purple' },
+  'ATE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 48, male: 39, female: 9, color: 'purple' },
 
   // CSE (Computer Science and Engineering)
   'CSE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 64, male: 24, female: 40, color: 'blue' },
@@ -11,7 +11,7 @@ const batchData = {
   'CSE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 57, male: 26, female: 31, color: 'purple' },
 
   // CVE (Civil Engineering)
-  'CVE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 46, male: 27, female: 19, color: 'blue' },
+  'CVE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 45, male: 26, female: 19, color: 'blue' },
   'CVE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 60, male: 29, female: 31, color: 'green' },
   'CVE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 50, male: 18, female: 32, color: 'purple' },
 
@@ -62,9 +62,9 @@ const departmentNames = {
 };
 
 const departmentTotals = {
-  'ATE': { total: 154, male: 126, female: 28 },
+  'ATE': { total: 155, male: 127, female: 28 },
   'CSE': { total: 185, male: 82, female: 103 },
-  'CVE': { total: 156, male: 74, female: 82 },
+  'CVE': { total: 155, male: 73, female: 82 },
   'ECE': { total: 183, male: 105, female: 78 },
   'EEE': { total: 180, male: 106, female: 74 },
   'IMT': { total: 173, male: 89, female: 84 },
