@@ -160,42 +160,63 @@ class TeamFormation {
     const minTeams = Math.ceil(totalStudents / 5);
     const maxTeams = Math.min(15, Math.floor(totalStudents / 4));
 
-    console.log(`Valid team range: ${minTeams} to ${maxTeams} teams (divisible by 3)`);
+    console.log(`Valid team range: ${minTeams} to ${maxTeams} teams`);
 
-    // Try each valid number of teams
+    // First pass: Try each valid number of teams divisible by 3
+    console.log(`\nFirst pass: Looking for teams divisible by 3...`);
     for (let numTeams = minTeams; numTeams <= maxTeams; numTeams++) {
       if (numTeams % 3 !== 0) continue;
 
-      console.log(`\nTrying ${numTeams} teams...`);
+      const result = this.tryFormTeams(numTeams, totalStudents, maleCount, femaleCount);
+      if (result.success) return result;
+    }
 
-      // Get team size distribution
-      const teamSizes = this.calculateTeamSizes(totalStudents, numTeams);
-      if (!teamSizes) {
-        console.log(`  No valid size distribution for ${numTeams} teams`);
-        continue;
-      }
+    // Second pass: If divisible by 3 fails, try ANY valid configuration
+    console.log(`\nSecond pass: Looking for ANY valid team configuration...`);
+    for (let numTeams = minTeams; numTeams <= maxTeams; numTeams++) {
+      if (numTeams % 3 === 0) continue; // Skip ones we already tried
 
-      console.log(`  Size distribution: ${teamSizes.join(', ')}`);
-
-      // Plan gender composition
-      const genderDist = this.planGenderDistribution(teamSizes, maleCount, femaleCount);
-      if (!genderDist) {
-        console.log(`  Cannot distribute genders for ${numTeams} teams`);
-        continue;
-      }
-
-      console.log(`  Gender distribution planned successfully`);
-
-      // Assign students
-      const teams = this.assignStudentsToTeams(teamSizes, genderDist);
-      if (teams && teams.length === numTeams) {
-        console.log(`✓ Successfully formed ${numTeams} teams!`);
-        this.teams = teams;
-        return { success: true, teams: this.teams };
+      const result = this.tryFormTeams(numTeams, totalStudents, maleCount, femaleCount);
+      if (result.success) {
+        console.warn(`⚠️ Note: ${numTeams} teams is not divisible by 3, but it's the best we can do`);
+        return result;
       }
     }
 
-    return { success: false, error: 'Could not find valid team configuration' };
+    return { success: false, error: 'Could not find valid team configuration for this batch size' };
+  }
+
+  // Try to form teams with a specific number
+  tryFormTeams(numTeams, totalStudents, maleCount, femaleCount) {
+    console.log(`\nTrying ${numTeams} teams...`);
+
+    // Get team size distribution
+    const teamSizes = this.calculateTeamSizes(totalStudents, numTeams);
+    if (!teamSizes) {
+      console.log(`  No valid size distribution for ${numTeams} teams`);
+      return { success: false };
+    }
+
+    console.log(`  Size distribution: ${teamSizes.join(', ')}`);
+
+    // Plan gender composition
+    const genderDist = this.planGenderDistribution(teamSizes, maleCount, femaleCount);
+    if (!genderDist) {
+      console.log(`  Cannot distribute genders for ${numTeams} teams`);
+      return { success: false };
+    }
+
+    console.log(`  Gender distribution planned successfully`);
+
+    // Assign students
+    const teams = this.assignStudentsToTeams(teamSizes, genderDist);
+    if (teams && teams.length === numTeams) {
+      console.log(`✓ Successfully formed ${numTeams} teams!`);
+      this.teams = teams;
+      return { success: true, teams: this.teams };
+    }
+
+    return { success: false };
   }
 
   // Shuffle array
