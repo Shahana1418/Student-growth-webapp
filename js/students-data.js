@@ -5250,9 +5250,9 @@ const STUDENTS_DATA = {
 },
 {
 "Student_ID": "25ATE49",
-"Name": "K.Aditya Vardhan",
-"Gender": "M",
-"Email_ID": "adityavardhan25@gmail.com"
+"Name": "K.Aadhya Varshini",
+"Gender": "F",
+"Email_ID": "aadhyavarshini25@gmail.com"
 }
 ],
 "EEE-2029": [

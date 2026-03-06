@@ -3,7 +3,7 @@ const batchData = {
   // ATE (Automobile Engineering)
   'ATE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 49, male: 43, female: 6, color: 'blue' },
   'ATE-2028': { year: 2028, level: '2nd Year', joined: 2024, passing: 2028, sem: 4, total: 58, male: 45, female: 13, color: 'green' },
-  'ATE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 48, male: 39, female: 9, color: 'purple' },
+  'ATE-2029': { year: 2029, level: '1st Year', joined: 2025, passing: 2029, sem: 2, total: 48, male: 38, female: 10, color: 'purple' },
 
   // CSE (Computer Science and Engineering)
   'CSE-2027': { year: 2027, level: '3rd Year', joined: 2023, passing: 2027, sem: 6, total: 64, male: 24, female: 40, color: 'blue' },
@@ -62,7 +62,7 @@ const departmentNames = {
 };
 
 const departmentTotals = {
-  'ATE': { total: 155, male: 127, female: 28 },
+  'ATE': { total: 155, male: 126, female: 29 },
   'CSE': { total: 185, male: 82, female: 103 },
   'CVE': { total: 155, male: 73, female: 82 },
   'ECE': { total: 183, male: 105, female: 78 },

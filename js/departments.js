@@ -6,8 +6,8 @@ const departments = [
     code: 'ATE',
     batches: 3,
     totalStudents: 155,
-    male: 127,
-    female: 28,
+    male: 126,
+    female: 29,
     icon: '🚗',
     color: 'ate'
   },
