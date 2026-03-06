@@ -63,30 +63,11 @@ async function loadStudents() {
 
   // Load student data
   try {
-    // Try multiple fetch paths for compatibility
-    let response;
-    let fetchPaths = [
-      'data/students.json',
-      './data/students.json',
-      '/Student-growth-webapp/data/students.json'
-    ];
+    // Use GitHub raw content URL for reliable data loading
+    const response = await fetch('https://raw.githubusercontent.com/Shahana1418/Student-growth-webapp/main/data/students.json');
 
-    let lastError = null;
-    for (let path of fetchPaths) {
-      try {
-        response = await fetch(path);
-        if (response.ok) {
-          console.log(`Successfully fetched from: ${path}`);
-          break;
-        }
-      } catch (e) {
-        lastError = e;
-        continue;
-      }
-    }
-
-    if (!response || !response.ok) {
-      throw lastError || new Error(`HTTP error! status: ${response?.status || 'unknown'}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const studentsData = await response.json();
@@ -100,7 +81,7 @@ async function loadStudents() {
   } catch (error) {
     console.error('Error loading students:', error);
     const tbody = document.getElementById('studentsTableBody');
-    tbody.innerHTML = '<tr><td colspan="4">Error loading student data. Trying alternate paths...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4">Error loading student data. Please refresh the page.</td></tr>';
   }
 }
 
