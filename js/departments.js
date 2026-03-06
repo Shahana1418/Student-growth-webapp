@@ -108,7 +108,7 @@ function loadDepartments() {
 function createDepartmentCard(dept) {
   const card = document.createElement('div');
   card.className = `department-card ${dept.color}`;
-  card.onclick = () => showDepartmentDetail(dept);
+  card.onclick = () => selectDepartment(dept);
 
   card.innerHTML = `
     <div class="department-header">
@@ -135,7 +135,7 @@ function createDepartmentCard(dept) {
     </div>
 
     <div class="department-action">
-      View Details
+      Select Batches
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg>
@@ -143,6 +143,11 @@ function createDepartmentCard(dept) {
   `;
 
   return card;
+}
+
+function selectDepartment(dept) {
+  sessionStorage.setItem('selectedDept', dept.code);
+  window.location.href = 'batches.html?dept=' + dept.code;
 }
 
 function showDepartmentDetail(dept) {

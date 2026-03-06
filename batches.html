@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Batch - Student Growth System</title>
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/batches.css?v=3">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>Student Growth</h1>
+        <p>ALUMNI MENTORSHIP & DEVELOPMENT</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">
+      <a href="#" onclick="goBack()">GCE Erode</a>
+      <span class="breadcrumb-separator">›</span>
+      <span id="deptNameBreadcrumb">Department</span>
+    </span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="batches-container">
+    <div class="batches-header">
+      <div class="header-icon" id="deptIcon">🏢</div>
+      <div class="header-info">
+        <h2 id="deptName">Department Name</h2>
+        <p id="deptCode">CODE · 154 students across 3 batches</p>
+      </div>
+    </div>
+
+    <!-- Department Stats -->
+    <div class="dept-stats">
+      <div class="stat-box blue">
+        <div class="stat-label">TOTAL STUDENTS</div>
+        <div class="stat-value" id="totalStudents">154</div>
+        <div class="stat-breakdown">
+          M: <span id="maleCount">126</span> | F: <span id="femaleCount">28</span>
+        </div>
+      </div>
+      <div class="stat-box green">
+        <div class="stat-label">BATCHES</div>
+        <div class="stat-value" id="batchCount">3</div>
+        <div class="stat-breakdown" id="batchYears">2027, 2028, 2029</div>
+      </div>
+    </div>
+
+    <!-- Batch Selection -->
+    <div class="batches-section">
+      <h3>Select a Batch</h3>
+      <div class="batches-grid" id="batchesGrid">
+        <!-- Batches will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=3"></script>
+  <script src="js/batches.js?v=3"></script>
+</body>
+</html>
