@@ -4,7 +4,7 @@
 const ADMIN_PASSWORD = 'Admin';
 
 // Protected pages that require authentication
-const PROTECTED_PAGES = ['index.html', 'departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html'];
+const PROTECTED_PAGES = ['index.html', 'departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html', 'syllabus.html', 'course-assignment.html'];
 
 function handleLogin(event) {
   event.preventDefault();
