@@ -43,20 +43,26 @@ function handleLogout() {
 
 // Check if user is logged in
 function checkAuth() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Get current page from href instead of pathname for better compatibility
+  const href = window.location.href;
   const isLoggedIn = localStorage.getItem('isLoggedIn');
 
   // Check if current page is a protected page
-  const isProtectedPage = PROTECTED_PAGES.some(page => currentPage.includes(page));
+  const isProtectedPage = PROTECTED_PAGES.some(page => href.includes(page));
 
+  // Prevent redirect loops
   if (isProtectedPage && !isLoggedIn) {
-    window.location.href = 'login.html';
+    if (!href.includes('login.html')) {
+      window.location.href = 'login.html';
+    }
     return;
   }
 
   // If on login page but already logged in, redirect to index
-  if (currentPage.includes('login.html') && isLoggedIn) {
-    window.location.href = 'index.html';
+  if (href.includes('login.html') && isLoggedIn) {
+    if (!href.includes('index.html')) {
+      window.location.href = 'index.html';
+    }
   }
 }
 
