@@ -4,7 +4,7 @@
 const ADMIN_PASSWORD = 'Admin';
 
 // Protected pages that require authentication
-const PROTECTED_PAGES = ['index.html', 'departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html', 'syllabus.html', 'course-assignment.html'];
+const PROTECTED_PAGES = ['departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html', 'syllabus.html', 'course-assignment.html'];
 
 function handleLogin(event) {
   event.preventDefault();
@@ -61,4 +61,9 @@ function checkAuth() {
 }
 
 // Run auth check when page loads
-document.addEventListener('DOMContentLoaded', checkAuth);
+// Check if DOM is already loaded, otherwise wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', checkAuth);
+} else {
+  checkAuth();
+}
