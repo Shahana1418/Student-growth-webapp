@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Growth - Alumni Mentorship System</title>
+  <link rel="stylesheet" href="css/style.css?v=40">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>SAM System</h1>
+        <p>STUDENT ALUMNI MENTORSHIP</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="navigateTo('login')">
+        🔐 Login
+      </button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">Government College of Engineering, Erode</span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="content-wrapper">
+      <div class="content-icon">🏫</div>
+      <h2 class="content-heading">Government College of Engineering, Erode</h2>
+      <p class="content-subheading">Student Alumni Mentorship (SAM) System</p>
+
+      <!-- Statistics -->
+      <div class="stats-section">
+        <div class="stat-card">
+          <div class="stat-number">1254</div>
+          <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Departments</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Batches</div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="cta-section">
+        <button class="cta-button" onclick="navigateTo('login')">
+          Browse Departments
+          <span class="arrow-icon">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=40"></script>
+  <script src="js/auth.js?v=40"></script>
+</body>
+</html>

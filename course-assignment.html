@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Assignments - Student Growth</title>
+  <link rel="stylesheet" href="css/style.css?v=42">
+  <link rel="stylesheet" href="css/course-assignment.css?v=42">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>Student Growth System</h1>
+        <p>ACADEMIC CURRICULUM & ASSIGNMENTS</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="goBackToSyllabus()" style="margin-right: 0.5rem;">← Back</button>
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">
+      <a href="syllabus.html">Syllabus</a>
+      <span class="breadcrumb-separator">›</span>
+      <span id="courseBreadcrumb">Course</span>
+      <span class="breadcrumb-separator">›</span>
+      <span>Assignment Generation</span>
+    </span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="assignment-container">
+    <!-- Info Banner -->
+    <div class="info-banner">
+      <span id="bannerText">Generate assignments and map to topics</span>
+    </div>
+
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+      <div class="step active" id="step-1-indicator">
+        <div class="step-number">1</div>
+        <div class="step-label">STEP 1<br>Course & Batch</div>
+      </div>
+      <div class="step" id="step-2-indicator">
+        <div class="step-number">2</div>
+        <div class="step-label">STEP 2<br>Assignment Type</div>
+      </div>
+      <div class="step" id="step-3-indicator">
+        <div class="step-number">3</div>
+        <div class="step-label">STEP 3<br>Configuration</div>
+      </div>
+      <div class="step" id="step-4-indicator">
+        <div class="step-number">4</div>
+        <div class="step-label">STEP 4<br>Generate</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Course & Batch Selection -->
+    <div class="step-content active" id="step-1">
+      <div class="step-header">
+        <span class="step-icon">📚</span>
+        <h2>Step 1 — Course & Batch Information</h2>
+      </div>
+      <div class="config-form">
+        <div class="form-group">
+          <label>BATCH</label>
+          <input type="text" id="batchField" readonly>
+        </div>
+        <div class="form-group">
+          <label>PASSING YEAR</label>
+          <input type="text" id="passingYearField" readonly>
+        </div>
+        <div class="form-group">
+          <label>SEMESTER</label>
+          <input type="text" id="semesterField" readonly>
+        </div>
+        <div class="form-group">
+          <label>COURSE NAME</label>
+          <input type="text" id="courseNameField" readonly>
+        </div>
+        <div class="form-group">
+          <label>COURSE CODE</label>
+          <input type="text" id="courseCodeField" readonly>
+        </div>
+        <div class="form-group">
+          <label>TOTAL UNITS</label>
+          <input type="text" id="unitsField" readonly>
+        </div>
+      </div>
+      <button class="step-btn next-btn" onclick="goToStep(2)">Next Step →</button>
+    </div>
+
+    <!-- STEP 2: Assignment Type -->
+    <div class="step-content" id="step-2">
+      <div class="step-header">
+        <span class="step-icon">🎯</span>
+        <h2>Step 2 — Select Assignment Types</h2>
+      </div>
+      <div class="assignment-types">
+        <div class="type-checkbox">
+          <input type="checkbox" id="type-presentation" value="team-presentation" checked>
+          <label for="type-presentation">
+            <span class="type-icon">🎤</span>
+            <span class="type-name">Team Presentation</span>
+            <span class="type-desc">Group-based presentations on topics</span>
+          </label>
+        </div>
+        <div class="type-checkbox">
+          <input type="checkbox" id="type-mini-project" value="mini-project" checked>
+          <label for="type-mini-project">
+            <span class="type-icon">🛠️</span>
+            <span class="type-name">Mini Projects</span>
+            <span class="type-desc">Small-scale practical implementations</span>
+          </label>
+        </div>
+        <div class="type-checkbox">
+          <input type="checkbox" id="type-lab" value="lab">
+          <label for="type-lab">
+            <span class="type-icon">🧪</span>
+            <span class="type-name">Lab Assignments</span>
+            <span class="type-desc">Hands-on laboratory experiments</span>
+          </label>
+        </div>
+        <div class="type-checkbox">
+          <input type="checkbox" id="type-code-review" value="code-review">
+          <label for="type-code-review">
+            <span class="type-icon">👁️</span>
+            <span class="type-name">Code Review</span>
+            <span class="type-desc">Peer code review and analysis</span>
+          </label>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <button class="step-btn prev-btn" onclick="goToStep(1)">← Previous</button>
+        <button class="step-btn next-btn" onclick="goToStep(3)">Next Step →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Configuration -->
+    <div class="step-content" id="step-3">
+      <div class="step-header">
+        <span class="step-icon">⚙️</span>
+        <h2>Step 3 — Configure Assignment Settings</h2>
+      </div>
+      <div class="config-section">
+        <div class="config-group">
+          <h4>Difficulty Level Distribution</h4>
+          <div class="difficulty-config">
+            <div class="difficulty-item">
+              <label for="easyPercent">Easy (%)</label>
+              <input type="number" id="easyPercent" value="20" min="0" max="100">
+            </div>
+            <div class="difficulty-item">
+              <label for="mediumPercent">Medium (%)</label>
+              <input type="number" id="mediumPercent" value="60" min="0" max="100">
+            </div>
+            <div class="difficulty-item">
+              <label for="hardPercent">Hard (%)</label>
+              <input type="number" id="hardPercent" value="20" min="0" max="100">
+            </div>
+          </div>
+        </div>
+
+        <div class="config-group">
+          <h4>Submission Timing</h4>
+          <div class="timing-config">
+            <div class="timing-item">
+              <label for="submissionDays">Days to Submit</label>
+              <input type="number" id="submissionDays" value="7" min="1" max="60">
+            </div>
+            <div class="timing-item">
+              <label for="reviewDays">Review Duration (days)</label>
+              <input type="number" id="reviewDays" value="3" min="1" max="14">
+            </div>
+          </div>
+        </div>
+
+        <div class="config-group">
+          <h4>Topics Focus</h4>
+          <div class="topics-info">
+            <input type="checkbox" id="focusImportant" checked>
+            <label for="focusImportant">Generate assignments for all important topics</label>
+          </div>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <button class="step-btn prev-btn" onclick="goToStep(2)">← Previous</button>
+        <button class="step-btn next-btn" onclick="goToStep(4)">Next Step →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Generate -->
+    <div class="step-content" id="step-4">
+      <div class="step-header">
+        <span class="step-icon">✨</span>
+        <h2>Step 4 — Generate Assignments</h2>
+      </div>
+      <div class="generate-section">
+        <p>Ready to generate assignments for <strong id="courseNameDisplay"></strong>?</p>
+        <p class="generate-description">This will create assignments based on course units and topics with the selected difficulty levels and assignment types.</p>
+        <button class="generate-btn" onclick="generateAndDisplay()">✨ Generate Assignments</button>
+      </div>
+      <div class="step-buttons">
+        <button class="step-btn prev-btn" onclick="goToStep(3)">← Previous</button>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="resultsSection" style="display: none;">
+      <button class="back-to-config-btn" onclick="resetConfiguration()">⚙️ Configure Again</button>
+
+      <div class="results-header">
+        <h2 id="resultsTitle">Generated Assignments</h2>
+      </div>
+
+      <div class="assignments-list" id="assignmentsList">
+        <!-- Assignments will be loaded here -->
+      </div>
+
+      <!-- Download Button -->
+      <div class="results-actions">
+        <button class="action-btn export-btn" onclick="downloadAssignmentsCSV()">
+          ⬇️ Download as CSV
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=42"></script>
+  <script src="js/course-assignment.js?v=42"></script>
+</body>
+</html>

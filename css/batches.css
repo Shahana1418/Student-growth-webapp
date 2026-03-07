@@ -1,0 +1,536 @@
+/* ==========================================
+   BATCHES PAGE - GLASSMORPHISM STYLING
+   ========================================== */
+
+.batches-container {
+  min-height: calc(100vh - 130px);
+  background: #f4f7fa;
+  padding: 1.5rem 2rem;
+}
+
+/* ==========================================
+   BATCHES HEADER
+   ========================================== */
+.batches-header {
+  max-width: 1000px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.header-icon {
+  font-size: 3.25rem;
+  min-width: 70px;
+  text-align: center;
+  background: #f0f9ff;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.batches-header:hover .header-icon {
+  transform: scale(1.08);
+}
+
+.header-info h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-info p {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ==========================================
+   DEPARTMENT STATS
+   ========================================== */
+.dept-stats {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-box {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #818cf8, #6366f1);
+  z-index: 1;
+}
+
+.stat-box.blue {
+  border-left: 3px solid #3b82f6;
+}
+
+.stat-box.blue::before {
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+}
+
+.stat-box.green {
+  border-left: 3px solid #10b981;
+}
+
+.stat-box.green::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(129, 140, 248, 0.2);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  letter-spacing: -1px;
+  color: #0f172a;
+  font-family: 'Poppins', sans-serif;
+}
+
+.stat-box.blue .stat-value {
+  color: #60a5fa;
+}
+
+.stat-box.green .stat-value {
+  color: #34d399;
+}
+
+.stat-breakdown {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+/* ==========================================
+   BREADCRUMB NAVIGATION
+   ========================================== */
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb a {
+  color: #818cf8;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.breadcrumb a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #818cf8;
+  transition: width 0.3s ease;
+}
+
+.breadcrumb a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   BATCHES SECTION
+   ========================================== */
+.batches-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.batches-section h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.batches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ==========================================
+   BATCH CARD
+   ========================================== */
+.batch-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.batch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 2;
+}
+
+.batch-card.blue::before {
+  background: linear-gradient(90deg, #1e40af, #1e3a8a);
+}
+
+.batch-card.green::before {
+  background: linear-gradient(90deg, #059669, #047857);
+}
+
+.batch-card.purple::before {
+  background: linear-gradient(90deg, #7c3aed, #6d28d9);
+}
+
+.batch-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(129, 140, 248, 0.25);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.batch-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.batch-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  background: #f0f9ff;
+  line-height: 1;
+}
+
+.batch-card.blue .batch-icon {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.batch-card.green .batch-icon {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.batch-card.purple .batch-icon {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+}
+
+.batch-card:hover .batch-icon {
+  transform: scale(1.1);
+}
+
+.batch-title {
+  flex: 1;
+}
+
+.batch-title h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.3px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.batch-title p {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 600;
+}
+
+.batch-details {
+  background: #f9fafb;
+  padding: 1.1rem 1.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.batch-details-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.batch-details-item:last-child {
+  margin-bottom: 0;
+}
+
+.batch-details-label {
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.batch-details-value {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.batch-stats {
+  padding: 1.5rem 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.batch-stat {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.batch-stat:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.batch-stat-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+.batch-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e40af;
+  letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.batch-stat-breakdown {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.4rem;
+  font-weight: 600;
+}
+
+.batch-stat-breakdown .male {
+  color: #1e40af;
+  font-weight: 800;
+}
+
+.batch-stat-breakdown .female {
+  color: #be185d;
+  font-weight: 800;
+}
+
+.batch-action {
+  padding: 0 1.75rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #1e40af;
+  font-weight: 700;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.batch-card:hover .batch-action {
+  opacity: 1;
+}
+
+.batch-action svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.batch-card:hover .batch-action svg {
+  transform: translateX(5px);
+}
+
+/* ==========================================
+   SEMESTER LABEL
+   ========================================== */
+.sem-label {
+  display: inline-block;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1f2937;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+  .batches-container {
+    padding: 2rem 1rem;
+  }
+
+  .batches-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .header-left {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dept-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .batches-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .batches-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .batches-container {
+    padding: 1.5rem;
+  }
+
+  .batches-header {
+    padding: 1.5rem;
+  }
+
+  .header-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .header-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .stat-box {
+    padding: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .batch-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .batch-card-header {
+    padding: 1.25rem;
+  }
+
+  .batch-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+
+  .batch-title h4 {
+    font-size: 1rem;
+  }
+
+  .batch-stats {
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .batch-action {
+    padding: 0 1.25rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}

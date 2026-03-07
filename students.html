@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Roster - Student Growth System</title>
+  <link rel="stylesheet" href="css/style.css?v=40">
+  <link rel="stylesheet" href="css/students.css?v=40">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>SAM System</h1>
+        <p>STUDENT ALUMNI MENTORSHIP</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="goBack()" style="margin-right: 0.5rem;">← Back</button>
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">
+      <a href="#" onclick="goBack()">GCE Erode</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="#" onclick="goToDepartment()"><span id="deptNameBreadcrumb">Department</span></a>
+      <span class="breadcrumb-separator">›</span>
+      <span id="batchBreadcrumb">Batch</span>
+    </span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="students-container">
+    <!-- Header Section -->
+    <div class="students-header">
+      <div class="header-left">
+        <div class="header-icon">👥</div>
+        <div class="header-info">
+          <h2 id="deptName">Department Name</h2>
+          <p id="batchInfo">0 students · CODE · Joined 2023 · Passing 2027 · Semester 6</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-cards">
+      <div class="stat-card blue">
+        <div class="stat-label">STUDENTS</div>
+        <div class="stat-value" id="totalStudents">0</div>
+        <div class="stat-subtext" id="deptCodeText">CODE · 2027</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">MALE</div>
+        <div class="stat-value" id="maleCount">0</div>
+        <div class="stat-percentage" id="malePercentage">0%</div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-label">FEMALE</div>
+        <div class="stat-value" id="femaleCount">0</div>
+        <div class="stat-percentage" id="femalePercentage">0%</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="stat-label">CURRENT SEMESTER</div>
+        <div class="stat-value" id="semesterDisplay">Sem 0</div>
+        <div class="stat-subtext" id="yearDisplay">Year · 2023-2027</div>
+      </div>
+    </div>
+
+    <!-- Student Roster Section -->
+    <div class="roster-section">
+      <h3>Student Roster</h3>
+
+      <!-- Search and Filters -->
+      <div class="roster-controls">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name or ID..."
+            onkeyup="filterStudents()"
+          >
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="filter-group">
+          <select id="genderFilter" onchange="filterStudents()">
+            <option value="">All</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Students Table -->
+      <div class="students-table-wrapper">
+        <table class="students-table">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <!-- Students will be loaded here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results" style="display: none;">
+        <p>No students found matching your search criteria.</p>
+      </div>
+    </div>
+
+    <!-- Generate Teams Button -->
+    <div class="generate-teams-section">
+      <button class="generate-teams-btn" onclick="generateTeamsForBatch()">
+        👥 Generate Teams
+      </button>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=40"></script>
+  <script src="js/students-data.js?v=40"></script>
+  <script src="js/team-formation.js?v=40"></script>
+  <script src="js/students.js?v=40"></script>
+</body>
+</html>

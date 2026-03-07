@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syllabus - Student Growth</title>
+  <link rel="stylesheet" href="css/style.css?v=42">
+  <link rel="stylesheet" href="css/syllabus.css?v=42">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>Student Growth System</h1>
+        <p>ACADEMIC CURRICULUM & ASSIGNMENTS</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="goBack()" style="margin-right: 0.5rem;">← Back</button>
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">Syllabus & Curriculum</span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="syllabus-container">
+    <!-- Header -->
+    <div class="syllabus-header">
+      <div class="header-left">
+        <div class="header-icon">📖</div>
+        <div class="header-info">
+          <h2>Curriculum & Syllabus</h2>
+          <p>Browse courses, objectives, outcomes, and units</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selection Section -->
+    <div class="selection-section">
+      <div class="selection-form">
+        <div class="form-group">
+          <label>SELECT BATCH</label>
+          <select id="batchSelect" onchange="updateBatch()">
+            <option value="">-- Select Batch --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>PASSING YEAR</label>
+          <input type="text" id="passingYearField" readonly>
+        </div>
+        <div class="form-group">
+          <label>SELECT SEMESTER</label>
+          <select id="semesterSelect" onchange="updateSemester()">
+            <option value="">-- Select Semester --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="courses-section" id="coursesSection" style="display: none;">
+      <h3>📚 Core Subjects</h3>
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Courses will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Course Details Section -->
+    <div class="course-details-section" id="courseDetailsSection" style="display: none;">
+      <button class="back-to-courses-btn" onclick="backToCourses()">← Back to Courses</button>
+
+      <div class="course-header" id="courseHeader">
+        <!-- Course header will be loaded here -->
+      </div>
+
+      <!-- Objectives -->
+      <div class="details-card">
+        <h4>📋 Course Objectives</h4>
+        <ul id="objectivesList" class="details-list">
+          <!-- Objectives will be loaded here -->
+        </ul>
+      </div>
+
+      <!-- Outcomes -->
+      <div class="details-card">
+        <h4>🎯 Course Outcomes</h4>
+        <ul id="outcomesList" class="details-list">
+          <!-- Outcomes will be loaded here -->
+        </ul>
+      </div>
+
+      <!-- Units and Topics -->
+      <div class="units-section" id="unitsSection">
+        <!-- Units will be loaded here -->
+      </div>
+
+      <!-- Action Button -->
+      <div class="course-action">
+        <button class="action-btn generate-btn" onclick="goToAssignmentGeneration()">
+          ✨ Generate Assignments for this Course
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState" style="display: none;">
+      <div class="empty-icon">📚</div>
+      <p>Select a batch and semester to view courses</p>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=42"></script>
+  <script src="js/syllabus.js?v=42"></script>
+</body>
+</html>

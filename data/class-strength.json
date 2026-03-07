@@ -1,0 +1,107 @@
+{
+  "IMT-2027": {
+    "total": 61,
+    "male": 34,
+    "female": 27
+  },
+  "EEE-2027": {
+    "total": 63,
+    "male": 41,
+    "female": 22
+  },
+  "CVE-2027": {
+    "total": 46,
+    "male": 27,
+    "female": 19
+  },
+  "CSE-2027": {
+    "total": 64,
+    "male": 24,
+    "female": 40
+  },
+  "ATE-2027": {
+    "total": 49,
+    "male": 43,
+    "female": 6
+  },
+  "MCE-2027": {
+    "total": 54,
+    "male": 48,
+    "female": 6
+  },
+  "ECE-2027": {
+    "total": 61,
+    "male": 27,
+    "female": 34
+  },
+  "ATE-2028": {
+    "total": 58,
+    "male": 45,
+    "female": 13
+  },
+  "MCE-2028": {
+    "total": 59,
+    "male": 52,
+    "female": 7
+  },
+  "IMT-2028": {
+    "total": 57,
+    "male": 29,
+    "female": 28
+  },
+  "CVE-2028": {
+    "total": 60,
+    "male": 29,
+    "female": 31
+  },
+  "CSE-2028": {
+    "total": 64,
+    "male": 32,
+    "female": 32
+  },
+  "ECE-2028": {
+    "total": 66,
+    "male": 0,
+    "female": 0
+  },
+  "EEE-2028": {
+    "total": 62,
+    "male": 40,
+    "female": 22
+  },
+  "ATE-2029": {
+    "total": 47,
+    "male": 38,
+    "female": 9
+  },
+  "EEE-2029": {
+    "total": 55,
+    "male": 25,
+    "female": 30
+  },
+  "CVE-2029": {
+    "total": 50,
+    "male": 18,
+    "female": 32
+  },
+  "ECE-2029": {
+    "total": 56,
+    "male": 36,
+    "female": 20
+  },
+  "CSE-2029": {
+    "total": 57,
+    "male": 26,
+    "female": 31
+  },
+  "MCE-2029": {
+    "total": 54,
+    "male": 47,
+    "female": 7
+  },
+  "DSC-2029": {
+    "total": 56,
+    "male": 28,
+    "female": 28
+  }
+}

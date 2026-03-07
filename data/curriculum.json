@@ -1,0 +1,229 @@
+{
+  "batches": [
+    {
+      "batch": "2023",
+      "passingYear": "2027",
+      "semesters": [
+        {
+          "semester": 1,
+          "courses": [
+            {
+              "id": "CS101",
+              "name": "Programming Fundamentals",
+              "code": "CS101",
+              "credits": 3,
+              "objectives": [
+                "Understand programming paradigms and languages",
+                "Learn basic data structures and algorithms",
+                "Develop problem-solving skills"
+              ],
+              "outcomes": [
+                "Write and debug simple C/C++ programs",
+                "Implement basic algorithms like sorting and searching",
+                "Apply Object-Oriented Programming concepts"
+              ],
+              "units": [
+                {
+                  "unit": 1,
+                  "title": "Introduction to Programming",
+                  "topics": [
+                    {
+                      "name": "Programming languages overview",
+                      "content": "History, types, and classification of programming languages"
+                    },
+                    {
+                      "name": "Variables and data types",
+                      "content": "Primitive and derived data types, variable declaration and initialization"
+                    }
+                  ]
+                },
+                {
+                  "unit": 2,
+                  "title": "Control Structures",
+                  "topics": [
+                    {
+                      "name": "Conditional statements",
+                      "content": "If-else, switch-case statements and their applications"
+                    },
+                    {
+                      "name": "Loops",
+                      "content": "For, while, do-while loops and loop control statements"
+                    }
+                  ]
+                },
+                {
+                  "unit": 3,
+                  "title": "Functions and Procedures",
+                  "topics": [
+                    {
+                      "name": "Function definition and calling",
+                      "content": "Parameters, return types, function prototypes"
+                    },
+                    {
+                      "name": "Scope and lifetime",
+                      "content": "Local, global variables and variable scope"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "MA101",
+              "name": "Discrete Mathematics",
+              "code": "MA101",
+              "credits": 4,
+              "objectives": [
+                "Understand mathematical foundations for computer science",
+                "Learn logic, set theory, and relations",
+                "Study graph theory and combinatorics"
+              ],
+              "outcomes": [
+                "Apply logical reasoning and proof techniques",
+                "Analyze graph problems and tree structures",
+                "Solve counting problems using combinatorial methods"
+              ],
+              "units": [
+                {
+                  "unit": 1,
+                  "title": "Logic and Set Theory",
+                  "topics": [
+                    {
+                      "name": "Propositional logic",
+                      "content": "Propositions, truth tables, logical operators"
+                    },
+                    {
+                      "name": "Set theory basics",
+                      "content": "Sets, subsets, operations on sets"
+                    }
+                  ]
+                },
+                {
+                  "unit": 2,
+                  "title": "Relations and Functions",
+                  "topics": [
+                    {
+                      "name": "Relations",
+                      "content": "Binary relations, properties, equivalence relations"
+                    },
+                    {
+                      "name": "Functions",
+                      "content": "Functions, injective, surjective, bijective"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": 2,
+          "courses": [
+            {
+              "id": "CS102",
+              "name": "Data Structures",
+              "code": "CS102",
+              "credits": 3,
+              "objectives": [
+                "Learn fundamental data structure concepts",
+                "Understand array, linked list, stack, and queue implementations",
+                "Analyze time and space complexity"
+              ],
+              "outcomes": [
+                "Implement common data structures",
+                "Choose appropriate data structures for problems",
+                "Analyze and optimize algorithm performance"
+              ],
+              "units": [
+                {
+                  "unit": 1,
+                  "title": "Arrays and Strings",
+                  "topics": [
+                    {
+                      "name": "Array operations",
+                      "content": "Insertion, deletion, searching in arrays"
+                    },
+                    {
+                      "name": "String manipulation",
+                      "content": "Pattern matching, string algorithms"
+                    }
+                  ]
+                },
+                {
+                  "unit": 2,
+                  "title": "Linked Lists and Stacks",
+                  "topics": [
+                    {
+                      "name": "Linked list operations",
+                      "content": "Insertion, deletion, traversal in linked lists"
+                    },
+                    {
+                      "name": "Stack applications",
+                      "content": "LIFO principle, stack operations, application examples"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "2024",
+      "passingYear": "2028",
+      "semesters": [
+        {
+          "semester": 1,
+          "courses": [
+            {
+              "id": "CS201",
+              "name": "Web Development",
+              "code": "CS201",
+              "credits": 3,
+              "objectives": [
+                "Understand web technologies and protocols",
+                "Learn HTML, CSS, and JavaScript",
+                "Build responsive web applications"
+              ],
+              "outcomes": [
+                "Create HTML5 semantic web pages",
+                "Style web pages with CSS3",
+                "Develop interactive web applications with JavaScript"
+              ],
+              "units": [
+                {
+                  "unit": 1,
+                  "title": "Web Fundamentals",
+                  "topics": [
+                    {
+                      "name": "HTTP protocol",
+                      "content": "Request/response, status codes, headers"
+                    },
+                    {
+                      "name": "HTML5 structure",
+                      "content": "Semantic tags, forms, accessibility"
+                    }
+                  ]
+                },
+                {
+                  "unit": 2,
+                  "title": "Styling and Layout",
+                  "topics": [
+                    {
+                      "name": "CSS selectors and properties",
+                      "content": "Box model, positioning, layout techniques"
+                    },
+                    {
+                      "name": "Responsive design",
+                      "content": "Media queries, flexible layouts, mobile-first approach"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
