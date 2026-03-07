@@ -146,8 +146,9 @@ function createDepartmentCard(dept) {
 }
 
 function selectDepartment(dept) {
+  const basePath = window.location.pathname.replace(/\/[^\/]*$/, '/');
   sessionStorage.setItem('selectedDept', dept.code);
-  window.location.href = 'batches.html?dept=' + dept.code;
+  window.location.href = basePath + 'batches.html?dept=' + dept.code;
 }
 
 function showDepartmentDetail(dept) {
@@ -210,15 +211,5 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-// Navigation functions
-function goHome() {
-  window.location.href = 'index.html';
-}
-
-function handleLogout() {
-  localStorage.removeItem('isLoggedIn');
-  sessionStorage.removeItem('selectedDept');
-  sessionStorage.removeItem('selectedBatch');
-  sessionStorage.removeItem('generatedTeams');
-  window.location.href = 'index.html';
+// Navigation functions (using getBasePath from auth.js for GitHub Pages compatibility)
 }

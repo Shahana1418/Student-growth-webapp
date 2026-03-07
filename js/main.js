@@ -1,11 +1,14 @@
 // Navigation function v2
 function navigateTo(page) {
   console.log('Navigating to:', page);
-  
+
+  // Get the base path for the app
+  const basePath = window.location.pathname.replace(/\/[^\/]*$/, '/');
+
   if (page === 'login') {
-    window.location.href = 'login.html';
+    window.location.href = basePath + 'login.html';
   } else if (page === 'departments') {
-    window.location.href = 'departments.html';
+    window.location.href = basePath + 'departments.html';
   }
 }
 

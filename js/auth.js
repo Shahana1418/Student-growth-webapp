@@ -6,6 +6,13 @@ const ADMIN_PASSWORD = 'Admin';
 // Protected pages that require authentication
 const PROTECTED_PAGES = ['departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html', 'syllabus.html', 'course-assignment.html'];
 
+// Helper function to get base path for GitHub Pages compatibility
+function getBasePath() {
+  const pathname = window.location.pathname;
+  // Remove trailing filename if it exists
+  return pathname.replace(/\/[^\/]*$/, '/');
+}
+
 function handleLogin(event) {
   event.preventDefault();
 
@@ -18,7 +25,7 @@ function handleLogin(event) {
     errorMessage.classList.remove('show');
 
     // Redirect to departments page
-    window.location.href = 'departments.html';
+    window.location.href = getBasePath() + 'departments.html';
   } else {
     // Show error
     errorMessage.textContent = 'Invalid password. Please try again.';
@@ -29,7 +36,7 @@ function handleLogin(event) {
 }
 
 function goHome() {
-  window.location.href = 'index.html';
+  window.location.href = getBasePath() + 'index.html';
 }
 
 function handleLogout() {
@@ -38,7 +45,7 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = 'index.html';
+  window.location.href = getBasePath() + 'index.html';
 }
 
 // Check if user is logged in
@@ -53,7 +60,7 @@ function checkAuth() {
   // Prevent redirect loops
   if (isProtectedPage && !isLoggedIn) {
     if (!href.includes('login.html')) {
-      window.location.href = 'login.html';
+      window.location.href = getBasePath() + 'login.html';
     }
     return;
   }
@@ -61,7 +68,7 @@ function checkAuth() {
   // If on login page but already logged in, redirect to index
   if (href.includes('login.html') && isLoggedIn) {
     if (!href.includes('index.html')) {
-      window.location.href = 'index.html';
+      window.location.href = getBasePath() + 'index.html';
     }
   }
 }
