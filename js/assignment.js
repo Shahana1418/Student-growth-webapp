@@ -3,6 +3,7 @@ let teamsData = [];
 let assignmentsData = [];
 let currentDept = '';
 let currentBatch = '';
+let currentStep = 1;
 let departmentNames = {
   'ATE': 'Automobile Engineering',
   'CSE': 'Computer Science and Engineering',
@@ -19,6 +20,7 @@ const ROLES = ['Presenter', 'Reviewer', 'Audience', 'Feedback'];
 // Load data on page load
 document.addEventListener('DOMContentLoaded', function() {
   loadAssignmentData();
+  initializeStep1();
 });
 
 function loadAssignmentData() {
@@ -34,15 +36,91 @@ function loadAssignmentData() {
   teamsData = data.teams;
   currentDept = data.dept;
   currentBatch = data.batch;
+}
+
+function initializeStep1() {
+  const dept = departmentNames[currentDept] || currentDept;
+  const totalStudents = teamsData.reduce((sum, t) => sum + t.members.length, 0);
+
+  document.getElementById('deptField').value = dept;
+  document.getElementById('batchField').value = currentBatch;
+  document.getElementById('teamsField').value = teamsData.length;
+  document.getElementById('studentsField').value = totalStudents;
+}
+
+function goToStep(stepNum) {
+  // Hide all steps
+  document.querySelectorAll('.step-content').forEach(el => {
+    el.classList.remove('active');
+  });
+  document.querySelectorAll('.step').forEach(el => {
+    el.classList.remove('active');
+  });
+
+  // Show selected step
+  document.getElementById(`step-${stepNum}`).classList.add('active');
+  document.getElementById(`step-${stepNum}-indicator`).classList.add('active');
+
+  currentStep = stepNum;
+
+  // Update preview if going to step 3
+  if (stepNum === 3) {
+    updatePreview();
+  }
+}
+
+function updatePreview() {
+  const presenterDuration = parseInt(document.getElementById('presenterDuration').value) || 12;
+  const reviewerDuration = parseInt(document.getElementById('reviewerDuration').value) || 5;
+  const audienceDuration = parseInt(document.getElementById('audienceDuration').value) || 5;
+  const feedbackDuration = parseInt(document.getElementById('feedbackDuration').value) || 5;
+
+  const totalSessionDuration = presenterDuration + reviewerDuration + audienceDuration + feedbackDuration;
+  const totalSessions = teamsData.length;
+  const teamsPerRole = Math.ceil(totalSessions / 4);
+
+  document.getElementById('sessionDurationPreview').textContent = totalSessionDuration + ' minutes';
+  document.getElementById('totalSessionsPreview').textContent = totalSessions;
+  document.getElementById('teamsPerRolePreview').textContent = teamsPerRole;
+}
+
+function generateAndDisplay() {
+  // Get configured durations
+  const presenterDuration = parseInt(document.getElementById('presenterDuration').value) || 12;
+  const reviewerDuration = parseInt(document.getElementById('reviewerDuration').value) || 5;
+  const audienceDuration = parseInt(document.getElementById('audienceDuration').value) || 5;
+  const feedbackDuration = parseInt(document.getElementById('feedbackDuration').value) || 5;
 
   // Generate role assignments
   generateAssignments();
 
-  // Update page header
-  updatePageHeader();
+  // Display role durations in results
+  document.getElementById('presenterDisplay').textContent = presenterDuration + '-' + presenterDuration + ' min';
+  document.getElementById('reviewerDisplay').textContent = reviewerDuration + ' min';
+  document.getElementById('audienceDisplay').textContent = audienceDuration + ' min';
+  document.getElementById('feedbackDisplay').textContent = feedbackDuration + ' min';
+
+  // Hide configuration and show results
+  document.querySelector('.step-indicator').style.display = 'none';
+  document.querySelectorAll('.step-content').forEach(el => {
+    el.style.display = 'none';
+  });
+  document.getElementById('resultsSection').style.display = 'block';
 
   // Display assignments
   displayAssignments();
+}
+
+function resetConfiguration() {
+  // Show configuration again
+  document.querySelector('.step-indicator').style.display = 'flex';
+  document.querySelectorAll('.step-content').forEach(el => {
+    el.style.display = 'none';
+  });
+  document.getElementById('resultsSection').style.display = 'none';
+
+  // Reset to step 1
+  goToStep(1);
 }
 
 function generateAssignments() {

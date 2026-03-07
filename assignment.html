@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Role Assignments - SAM System</title>
-  <link rel="stylesheet" href="css/style.css?v=40">
-  <link rel="stylesheet" href="css/assignment.css?v=40">
+  <title>Assignment Generation - SAM System</title>
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/assignment.css?v=41">
 </head>
 <body>
   <!-- Header -->
@@ -21,7 +21,7 @@
       Government College of Engineering, Erode
     </div>
     <div class="header-right">
-      <button class="login-btn" onclick="goBack()" style="margin-right: 0.5rem;">← Back</button>
+      <button class="login-btn" onclick="goBackToTeams()" style="margin-right: 0.5rem;">← Back</button>
       <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
     </div>
   </header>
@@ -41,84 +41,215 @@
       <span class="breadcrumb-separator">›</span>
       <a href="#" onclick="goBackToTeams()"><span id="batchBreadcrumb">Batch</span></a>
       <span class="breadcrumb-separator">›</span>
-      <span>Assignments</span>
+      <span>Assignment Generation</span>
     </span>
   </nav>
 
   <!-- Main Content -->
   <div class="assignment-container">
-    <!-- Header Section -->
-    <div class="assignment-header">
-      <div class="header-left">
-        <div class="header-icon">🎯</div>
-        <div class="header-info">
-          <h2 id="pageTitle">Role Assignments</h2>
-          <p id="pageSubtitle">Session-wise role allocation</p>
+    <!-- Info Banner -->
+    <div class="info-banner">
+      <span id="bannerText">Generate assignments and map to sessions</span>
+    </div>
+
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+      <div class="step active" id="step-1-indicator">
+        <div class="step-number">1</div>
+        <div class="step-label">STEP 1<br>Team Selection</div>
+      </div>
+      <div class="step" id="step-2-indicator">
+        <div class="step-number">2</div>
+        <div class="step-label">STEP 2<br>Role Setup</div>
+      </div>
+      <div class="step" id="step-3-indicator">
+        <div class="step-number">3</div>
+        <div class="step-label">STEP 3<br>Preview</div>
+      </div>
+      <div class="step" id="step-4-indicator">
+        <div class="step-number">4</div>
+        <div class="step-label">STEP 4<br>Configure & Generate</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Team Selection -->
+    <div class="step-content active" id="step-1">
+      <div class="step-header">
+        <span class="step-icon">📚</span>
+        <h2>Step 1 — Team Selection</h2>
+      </div>
+      <div class="config-form">
+        <div class="form-group">
+          <label>DEPARTMENT</label>
+          <input type="text" id="deptField" readonly>
+        </div>
+        <div class="form-group">
+          <label>BATCH YEAR</label>
+          <input type="text" id="batchField" readonly>
+        </div>
+        <div class="form-group">
+          <label>TOTAL TEAMS</label>
+          <input type="text" id="teamsField" readonly>
+        </div>
+        <div class="form-group">
+          <label>TOTAL STUDENTS</label>
+          <input type="text" id="studentsField" readonly>
         </div>
       </div>
+      <button class="step-btn next-btn" onclick="goToStep(2)">Next Step →</button>
     </div>
 
-    <!-- Role Info -->
-    <div class="role-info">
-      <div class="role-card presenter">
-        <div class="role-name">Presenter</div>
-        <div class="role-time">10-15 min</div>
+    <!-- STEP 2: Role Setup -->
+    <div class="step-content" id="step-2">
+      <div class="step-header">
+        <span class="step-icon">🎭</span>
+        <h2>Step 2 — Role Setup</h2>
       </div>
-      <div class="role-card reviewer">
-        <div class="role-name">Reviewer</div>
-        <div class="role-time">5 min</div>
+      <div class="role-config">
+        <div class="role-setup-card">
+          <div class="role-title">Presenter</div>
+          <div class="role-setting">
+            <label>Duration (minutes)</label>
+            <input type="number" id="presenterDuration" value="12" min="10" max="15">
+          </div>
+        </div>
+        <div class="role-setup-card">
+          <div class="role-title">Reviewer</div>
+          <div class="role-setting">
+            <label>Duration (minutes)</label>
+            <input type="number" id="reviewerDuration" value="5" min="1" max="10">
+          </div>
+        </div>
+        <div class="role-setup-card">
+          <div class="role-title">Audience</div>
+          <div class="role-setting">
+            <label>Duration (minutes)</label>
+            <input type="number" id="audienceDuration" value="5" min="1" max="10">
+          </div>
+        </div>
+        <div class="role-setup-card">
+          <div class="role-title">Feedback</div>
+          <div class="role-setting">
+            <label>Duration (minutes)</label>
+            <input type="number" id="feedbackDuration" value="5" min="1" max="10">
+          </div>
+        </div>
       </div>
-      <div class="role-card audience">
-        <div class="role-name">Audience</div>
-        <div class="role-time">5 min</div>
-      </div>
-      <div class="role-card feedback">
-        <div class="role-name">Feedback</div>
-        <div class="role-time">5 min</div>
-      </div>
-    </div>
-
-    <!-- Assignment Table -->
-    <div class="assignment-section">
-      <h3>Session-wise Assignments</h3>
-      <div class="table-wrapper">
-        <table class="assignment-table" id="assignmentTable">
-          <thead>
-            <tr>
-              <th>Session</th>
-              <th>Presenter</th>
-              <th>Reviewer</th>
-              <th>Audience</th>
-              <th>Feedback</th>
-            </tr>
-          </thead>
-          <tbody id="assignmentBody">
-            <!-- Assignments will be loaded here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Team-wise View -->
-    <div class="assignment-section">
-      <h3>Team Assignments</h3>
-      <div class="team-assignments" id="teamAssignments">
-        <!-- Team assignments will be loaded here -->
+      <div class="step-buttons">
+        <button class="step-btn prev-btn" onclick="goToStep(1)">← Previous</button>
+        <button class="step-btn next-btn" onclick="goToStep(3)">Next Step →</button>
       </div>
     </div>
 
-    <!-- Actions -->
-    <div class="assignment-actions">
-      <button class="action-btn back-btn" onclick="goBackToTeams()">
-        ← Back to Teams
-      </button>
-      <button class="action-btn export-btn" onclick="downloadAssignmentsCSV()">
-        ⬇️ Export CSV
-      </button>
+    <!-- STEP 3: Preview -->
+    <div class="step-content" id="step-3">
+      <div class="step-header">
+        <span class="step-icon">👀</span>
+        <h2>Step 3 — Preview Settings</h2>
+      </div>
+      <div class="preview-section">
+        <div class="preview-item">
+          <span class="label">Session Duration</span>
+          <span class="value" id="sessionDurationPreview">30 minutes</span>
+        </div>
+        <div class="preview-item">
+          <span class="label">Total Sessions</span>
+          <span class="value" id="totalSessionsPreview">12</span>
+        </div>
+        <div class="preview-item">
+          <span class="label">Teams per Role</span>
+          <span class="value" id="teamsPerRolePreview">3</span>
+        </div>
+        <div class="preview-item">
+          <span class="label">Assignment Method</span>
+          <span class="value">Fair Rotation</span>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <button class="step-btn prev-btn" onclick="goToStep(2)">← Previous</button>
+        <button class="step-btn next-btn" onclick="goToStep(4)">Next Step →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Configure & Generate -->
+    <div class="step-content" id="step-4">
+      <div class="step-header">
+        <span class="step-icon">⚙️</span>
+        <h2>Step 4 — Configure & Generate</h2>
+      </div>
+      <div class="generate-section">
+        <p>Ready to generate assignments? Click the button below to create session-wise role assignments with fair rotation.</p>
+        <button class="generate-btn" onclick="generateAndDisplay()">✨ Generate Assignments</button>
+      </div>
+      <div class="step-buttons">
+        <button class="step-btn prev-btn" onclick="goToStep(3)">← Previous</button>
+      </div>
+    </div>
+
+    <!-- Results Section (Hidden initially) -->
+    <div class="results-section" id="resultsSection" style="display: none;">
+      <!-- Role Info -->
+      <div class="role-info">
+        <div class="role-card presenter">
+          <div class="role-name">Presenter</div>
+          <div class="role-time" id="presenterDisplay">10-15 min</div>
+        </div>
+        <div class="role-card reviewer">
+          <div class="role-name">Reviewer</div>
+          <div class="role-time" id="reviewerDisplay">5 min</div>
+        </div>
+        <div class="role-card audience">
+          <div class="role-name">Audience</div>
+          <div class="role-time" id="audienceDisplay">5 min</div>
+        </div>
+        <div class="role-card feedback">
+          <div class="role-name">Feedback</div>
+          <div class="role-time" id="feedbackDisplay">5 min</div>
+        </div>
+      </div>
+
+      <!-- Assignment Table -->
+      <div class="assignment-section">
+        <h3>Session Calendar</h3>
+        <div class="table-wrapper">
+          <table class="assignment-table" id="assignmentTable">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Presenter</th>
+                <th>Reviewer</th>
+                <th>Audience</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody id="assignmentBody">
+              <!-- Assignments will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Team-wise View -->
+      <div class="assignment-section">
+        <h3>Team Assignments</h3>
+        <div class="team-assignments" id="teamAssignments">
+          <!-- Team assignments will be loaded here -->
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="assignment-actions">
+        <button class="action-btn back-btn" onclick="resetConfiguration()">
+          ← Configure Again
+        </button>
+        <button class="action-btn export-btn" onclick="downloadAssignmentsCSV()">
+          ⬇️ Export CSV
+        </button>
+      </div>
     </div>
   </div>
 
-  <script src="js/auth.js?v=40"></script>
-  <script src="js/assignment.js?v=40"></script>
+  <script src="js/auth.js?v=41"></script>
+  <script src="js/assignment.js?v=41"></script>
 </body>
 </html>

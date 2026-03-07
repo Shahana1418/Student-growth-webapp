@@ -9,6 +9,388 @@
 }
 
 /* ==========================================
+   INFO BANNER
+   ========================================== */
+.info-banner {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+}
+
+/* ==========================================
+   STEP INDICATOR
+   ========================================== */
+.step-indicator {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.step-indicator::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 0;
+}
+
+.step {
+  background: white;
+  width: 120px;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.step.active {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  border-color: #1e40af;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.step:hover:not(.active) {
+  border-color: #cbd5e1;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.5rem;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: 'Poppins', sans-serif;
+}
+
+.step.active .step-number {
+  background: white;
+  color: #2563eb;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.step.active .step-label {
+  color: white;
+}
+
+/* ==========================================
+   STEP CONTENT
+   ========================================== */
+.step-content {
+  display: none;
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  animation: slideIn 0.3s ease;
+}
+
+.step-content.active {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+}
+
+.step-header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================
+   CONFIGURATION FORM
+   ========================================== */
+.config-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  padding: 0.9rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #f9fafb;
+  color: #0f172a;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #f0f9ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ==========================================
+   ROLE CONFIGURATION
+   ========================================== */
+.role-config {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.role-setup-card {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.role-setup-card:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.role-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.role-setting {
+  display: flex;
+  flex-direction: column;
+}
+
+.role-setting label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.role-setting input {
+  padding: 0.7rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  color: #0f172a;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.role-setting input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ==========================================
+   PREVIEW SECTION
+   ========================================== */
+.preview-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.preview-item {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.preview-item .label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+}
+
+.preview-item .value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e40af;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================
+   GENERATE SECTION
+   ========================================== */
+.generate-section {
+  text-align: center;
+  padding: 2rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border: 2px dashed #2563eb;
+  margin-bottom: 2rem;
+}
+
+.generate-section p {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   STEP BUTTONS
+   ========================================== */
+.step-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.step-btn {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.prev-btn {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.prev-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.next-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.step-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   RESULTS SECTION
+   ========================================== */
+.results-section {
+  animation: slideIn 0.3s ease;
+}
+
+/* ==========================================
    HEADER SECTION
    ========================================== */
 .assignment-header {
