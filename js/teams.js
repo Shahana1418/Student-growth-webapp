@@ -32,6 +32,9 @@ function loadTeams() {
   currentDept = data.dept;
   currentBatch = data.batch;
 
+  // Assign sessions to teams if not already assigned
+  assignSessionsToTeams();
+
   // Update page header
   updatePageHeader();
 
@@ -52,11 +55,24 @@ function updatePageHeader() {
 
   // Update stats
   const totalStudents = teamsData.reduce((sum, t) => sum + t.members.length, 0);
-  const avgSize = teamsData.length > 0 ? (totalStudents / teamsData.length).toFixed(1) : 0;
+  const totalSessions = teamsData.length;
+  const totalMinutes = totalSessions * 30;
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
 
   document.getElementById('totalTeams').textContent = teamsData.length;
   document.getElementById('totalStudents').textContent = totalStudents;
-  document.getElementById('avgTeamSize').textContent = avgSize;
+  document.getElementById('totalSessions').textContent = totalSessions;
+  document.getElementById('totalDuration').textContent = `${hours}h ${minutes}m`;
+}
+
+function assignSessionsToTeams() {
+  // Assign sessions (1-12) to teams in order
+  teamsData.forEach((team, index) => {
+    if (!team.session) {
+      team.session = index + 1;
+    }
+  });
 }
 
 function displayTeams() {
@@ -88,11 +104,15 @@ function createTeamCard(team, teamNumber) {
     </div>
   `).join('');
 
+  const sessionNum = String(team.session).padStart(2, '0');
+
   card.innerHTML = `
     <div class="team-header">
       <div class="team-number">Team ${teamNumber}</div>
-      <div class="team-size">${team.size} Members</div>
+      <div class="team-session">Session ${sessionNum}</div>
     </div>
+
+    <div class="team-size-info">${team.size} Members</div>
 
     <div class="team-composition">
       <div class="composition-item">
@@ -144,11 +164,11 @@ function handleLogout() {
 function downloadTeamsCSV() {
   if (teamsData.length === 0) return;
 
-  let csv = 'Team Number,Student ID,Student Name,Gender,Team Size,Male Count,Female Count\n';
+  let csv = 'Team Number,Student ID,Student Name,Gender,Session,Team Size,Male Count,Female Count\n';
 
   teamsData.forEach((team, idx) => {
     team.members.forEach((member, memberIdx) => {
-      csv += `Team ${idx + 1},${member.Student_ID},"${member.Name}",${member.Gender},${team.size},${team.maleCount},${team.femaleCount}\n`;
+      csv += `Team ${idx + 1},${member.Student_ID},"${member.Name}",${member.Gender},${team.session},${team.size},${team.maleCount},${team.femaleCount}\n`;
     });
   });
 
@@ -160,4 +180,14 @@ function downloadTeamsCSV() {
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
+}
+
+function goToAssignments() {
+  // Save teams data to sessionStorage for assignment page
+  sessionStorage.setItem('teamsForAssignment', JSON.stringify({
+    teams: teamsData,
+    dept: currentDept,
+    batch: currentBatch
+  }));
+  window.location.href = 'assignment.html';
 }

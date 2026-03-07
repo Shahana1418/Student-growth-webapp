@@ -4,7 +4,7 @@
 const ADMIN_PASSWORD = 'Admin';
 
 // Protected pages that require authentication
-const PROTECTED_PAGES = ['departments.html', 'batches.html', 'students.html', 'teams.html'];
+const PROTECTED_PAGES = ['index.html', 'departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html'];
 
 function handleLogin(event) {
   event.preventDefault();
@@ -51,11 +51,12 @@ function checkAuth() {
 
   if (isProtectedPage && !isLoggedIn) {
     window.location.href = 'login.html';
+    return;
   }
 
-  // If on login page but already logged in, redirect to departments
+  // If on login page but already logged in, redirect to index
   if (currentPage.includes('login.html') && isLoggedIn) {
-    window.location.href = 'departments.html';
+    window.location.href = 'index.html';
   }
 }
 

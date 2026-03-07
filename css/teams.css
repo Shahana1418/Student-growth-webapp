@@ -107,6 +107,10 @@
   background: linear-gradient(90deg, #a855f7, #7c3aed);
 }
 
+.teams-stats .stat-card.orange::before {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
 .teams-stats .stat-label {
   font-size: 0.75rem;
   color: #64748b;
@@ -135,6 +139,10 @@
 
 .teams-stats .stat-card.purple .stat-value {
   color: #7c3aed;
+}
+
+.teams-stats .stat-card.orange .stat-value {
+  color: #d97706;
 }
 
 .teams-stats .stat-subtext {
@@ -253,6 +261,17 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.team-session {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .team-size {
   font-size: 0.85rem;
   color: #64748b;
@@ -262,6 +281,13 @@
   border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.team-size-info {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .team-composition {
@@ -396,6 +422,17 @@
 .download-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.assignment-btn {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.assignment-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.4);
 }
 
 /* ==========================================

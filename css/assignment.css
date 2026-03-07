@@ -1,0 +1,460 @@
+/* ==========================================
+   ASSIGNMENT PAGE STYLING
+   ========================================== */
+
+.assignment-container {
+  min-height: calc(100vh - 130px);
+  background: #f4f7fa;
+  padding: 1.5rem 2rem;
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+.assignment-header {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  background: #f8fafc;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+}
+
+.assignment-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.assignment-header .header-icon {
+  font-size: 2.75rem;
+  min-width: 70px;
+  height: 70px;
+  background: #fef3c7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.assignment-header:hover .header-icon {
+  transform: scale(1.08);
+}
+
+.assignment-header .header-info h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.assignment-header .header-info p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================
+   ROLE INFO CARDS
+   ========================================== */
+.role-info {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.role-card {
+  background: #ffffff;
+  padding: 1.5rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.role-card.presenter {
+  border-left: 4px solid #3b82f6;
+}
+
+.role-card.presenter::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.75rem;
+  background: #dbeafe;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.role-card.presenter::after {
+  content: '🎤';
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+.role-card.reviewer {
+  border-left: 4px solid #8b5cf6;
+}
+
+.role-card.audience {
+  border-left: 4px solid #10b981;
+}
+
+.role-card.feedback {
+  border-left: 4px solid #f59e0b;
+}
+
+.role-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.role-time {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ==========================================
+   ASSIGNMENT SECTION
+   ========================================== */
+.assignment-section {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+}
+
+.assignment-section h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================
+   ASSIGNMENT TABLE
+   ========================================== */
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.assignment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignment-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.assignment-table thead th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.assignment-table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.assignment-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.assignment-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.session-cell {
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.role-cell {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.role-cell.presenter {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.role-cell.reviewer {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.role-cell.audience {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.role-cell.feedback {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ==========================================
+   TEAM ASSIGNMENTS
+   ========================================== */
+.team-assignments {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.team-assignment-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 2px solid #e2e8f0;
+  transition: all 0.4s ease;
+}
+
+.team-assignment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(129, 140, 248, 0.25);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.team-assignment-header {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e2e8f0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.team-assignment-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.assignment-badge {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.assignment-badge:hover {
+  transform: scale(1.02);
+}
+
+.assignment-badge.presenter {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.assignment-badge.reviewer {
+  background: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #d8b4fe;
+}
+
+.assignment-badge.audience {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.assignment-badge.feedback {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+/* ==========================================
+   ASSIGNMENT ACTIONS
+   ========================================== */
+.assignment-actions {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.action-btn {
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-btn {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.back-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.export-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.export-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 1024px) {
+  .team-assignments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .assignment-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .assignment-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .assignment-header .header-left {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .role-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-assignments {
+    grid-template-columns: 1fr;
+  }
+
+  .assignment-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .assignment-table {
+    font-size: 0.85rem;
+  }
+
+  .assignment-table thead th,
+  .assignment-table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .assignment-container {
+    padding: 1rem;
+  }
+
+  .assignment-header {
+    padding: 1rem;
+  }
+
+  .assignment-header .header-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .assignment-header .header-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .role-info {
+    grid-template-columns: 1fr;
+  }
+
+  .assignment-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .team-assignment-card {
+    padding: 1rem;
+  }
+
+  .team-assignment-header {
+    font-size: 1rem;
+  }
+
+  .assignment-badge {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .action-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

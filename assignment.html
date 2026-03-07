@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role Assignments - SAM System</title>
+  <link rel="stylesheet" href="css/style.css?v=39">
+  <link rel="stylesheet" href="css/assignment.css?v=39">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓</div>
+      <div class="logo-text">
+        <h1>SAM System</h1>
+        <p>STUDENT ALUMNI MENTORSHIP</p>
+      </div>
+    </div>
+    <div class="header-center">
+      Government College of Engineering, Erode
+    </div>
+    <div class="header-right">
+      <button class="login-btn" onclick="goBack()" style="margin-right: 0.5rem;">← Back</button>
+      <button class="login-btn" onclick="handleLogout()">🚪 Logout</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="breadcrumb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <span class="breadcrumb-text">
+      <a href="#" onclick="goHome()">GCE Erode</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="#" onclick="goToDepartment()"><span id="deptNameBreadcrumb">Department</span></a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="#" onclick="goBackToTeams()"><span id="batchBreadcrumb">Batch</span></a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Assignments</span>
+    </span>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="assignment-container">
+    <!-- Header Section -->
+    <div class="assignment-header">
+      <div class="header-left">
+        <div class="header-icon">🎯</div>
+        <div class="header-info">
+          <h2 id="pageTitle">Role Assignments</h2>
+          <p id="pageSubtitle">Session-wise role allocation</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Role Info -->
+    <div class="role-info">
+      <div class="role-card presenter">
+        <div class="role-name">Presenter</div>
+        <div class="role-time">10-15 min</div>
+      </div>
+      <div class="role-card reviewer">
+        <div class="role-name">Reviewer</div>
+        <div class="role-time">5 min</div>
+      </div>
+      <div class="role-card audience">
+        <div class="role-name">Audience</div>
+        <div class="role-time">5 min</div>
+      </div>
+      <div class="role-card feedback">
+        <div class="role-name">Feedback</div>
+        <div class="role-time">5 min</div>
+      </div>
+    </div>
+
+    <!-- Assignment Table -->
+    <div class="assignment-section">
+      <h3>Session-wise Assignments</h3>
+      <div class="table-wrapper">
+        <table class="assignment-table" id="assignmentTable">
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Presenter</th>
+              <th>Reviewer</th>
+              <th>Audience</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          <tbody id="assignmentBody">
+            <!-- Assignments will be loaded here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Team-wise View -->
+    <div class="assignment-section">
+      <h3>Team Assignments</h3>
+      <div class="team-assignments" id="teamAssignments">
+        <!-- Team assignments will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="assignment-actions">
+      <button class="action-btn back-btn" onclick="goBackToTeams()">
+        ← Back to Teams
+      </button>
+      <button class="action-btn export-btn" onclick="downloadAssignmentsCSV()">
+        ⬇️ Export CSV
+      </button>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=39"></script>
+  <script src="js/assignment.js?v=39"></script>
+</body>
+</html>
