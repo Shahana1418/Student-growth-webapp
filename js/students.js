@@ -53,7 +53,7 @@ async function loadStudents() {
   currentBatch = params.get('batch') || sessionStorage.getItem('selectedBatch');
 
   if (!currentDept || !currentBatch) {
-    window.location.href = getBaseUrl() + 'departments.html';
+    window.location.href = getBaseUrl() + './departments.html';
     return;
   }
 
@@ -177,5 +177,5 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }

@@ -201,11 +201,11 @@ function goToAssignmentGeneration() {
 }
 
 function goBack() {
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }
 
 function handleLogout() {
   localStorage.removeItem('isLoggedIn');
   sessionStorage.clear();
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }

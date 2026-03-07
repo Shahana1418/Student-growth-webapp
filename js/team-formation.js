@@ -234,7 +234,7 @@ function generateTeamsForBatch() {
       }))
     }));
 
-    window.location.href = getBaseUrl() + 'teams.html';
+    window.location.href = getBaseUrl() + './teams.html';
   } else {
     console.error(`❌ FAILED: ${result.error}`);
     alert(`❌ Error: ${result.error}\n\nCheck Console (F12)`);

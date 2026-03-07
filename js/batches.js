@@ -83,7 +83,7 @@ function loadBatches() {
   const deptCode = params.get('dept') || sessionStorage.getItem('selectedDept');
 
   if (!deptCode) {
-    window.location.href = getBaseUrl() + 'departments.html';
+    window.location.href = getBaseUrl() + './departments.html';
     return;
   }
 
@@ -206,7 +206,7 @@ function selectBatch(deptCode, year) {
 
 function goBack() {
   sessionStorage.removeItem('selectedDept');
-  window.location.href = getBaseUrl() + 'departments.html';
+  window.location.href = getBaseUrl() + './departments.html';
 }
 
 function handleLogout() {
@@ -214,5 +214,5 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }

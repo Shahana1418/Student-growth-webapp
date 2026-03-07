@@ -28,7 +28,7 @@ function loadAssignmentData() {
   const assignmentJSON = sessionStorage.getItem('teamsForAssignment');
 
   if (!assignmentJSON) {
-    window.location.href = getBaseUrl() + 'teams.html';
+    window.location.href = getBaseUrl() + './teams.html';
     return;
   }
 
@@ -295,22 +295,22 @@ function downloadAssignmentsCSV() {
 }
 
 function goBack() {
-  window.location.href = getBaseUrl() + 'teams.html';
+  window.location.href = getBaseUrl() + './teams.html';
 }
 
 function goBackToTeams() {
   sessionStorage.removeItem('teamsForAssignment');
-  window.location.href = getBaseUrl() + 'teams.html';
+  window.location.href = getBaseUrl() + './teams.html';
 }
 
 function goHome() {
   sessionStorage.removeItem('teamsForAssignment');
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }
 
 function goToDepartment() {
   sessionStorage.removeItem('teamsForAssignment');
-  window.location.href = getBaseUrl() + 'departments.html';
+  window.location.href = getBaseUrl() + './departments.html';
 }
 
 function handleLogout() {
@@ -319,5 +319,5 @@ function handleLogout() {
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
   sessionStorage.removeItem('teamsForAssignment');
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }

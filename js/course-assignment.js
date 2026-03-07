@@ -26,7 +26,7 @@ function loadCourseData() {
   const courseJSON = sessionStorage.getItem('selectedCourse');
 
   if (!courseJSON) {
-    window.location.href = getBaseUrl() + 'syllabus.html';
+    window.location.href = getBaseUrl() + './syllabus.html';
     return;
   }
 
@@ -287,11 +287,11 @@ function resetConfiguration() {
 
 function goBackToSyllabus() {
   sessionStorage.removeItem('selectedCourse');
-  window.location.href = getBaseUrl() + 'syllabus.html';
+  window.location.href = getBaseUrl() + './syllabus.html';
 }
 
 function handleLogout() {
   localStorage.removeItem('isLoggedIn');
   sessionStorage.clear();
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }

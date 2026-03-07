@@ -23,7 +23,7 @@ function loadTeams() {
   const teamsJSON = sessionStorage.getItem('generatedTeams');
 
   if (!teamsJSON) {
-    window.location.href = getBaseUrl() + 'departments.html';
+    window.location.href = getBaseUrl() + './departments.html';
     return;
   }
 
@@ -145,7 +145,7 @@ function goBackToStudents() {
 
 function goHome() {
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }
 
 function goToDepartment() {
@@ -158,7 +158,7 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = getBaseUrl() + 'index.html';
+  window.location.href = getBaseUrl() + './index.html';
 }
 
 function downloadTeamsCSV() {
@@ -189,5 +189,5 @@ function goToAssignments() {
     dept: currentDept,
     batch: currentBatch
   }));
-  window.location.href = getBaseUrl() + 'assignment.html';
+  window.location.href = getBaseUrl() + './assignment.html';
 }
