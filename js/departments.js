@@ -146,9 +146,11 @@ function createDepartmentCard(dept) {
 }
 
 function selectDepartment(dept) {
-  const basePath = window.location.pathname.replace(/\/[^\/]*$/, '/');
+  const href = window.location.href;
+  const lastSlash = href.lastIndexOf('/');
+  const baseUrl = href.substring(0, lastSlash + 1);
   sessionStorage.setItem('selectedDept', dept.code);
-  window.location.href = basePath + 'batches.html?dept=' + dept.code;
+  window.location.href = baseUrl + 'batches.html?dept=' + dept.code;
 }
 
 function showDepartmentDetail(dept) {

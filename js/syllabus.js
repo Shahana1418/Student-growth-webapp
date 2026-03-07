@@ -197,15 +197,15 @@ function goToAssignmentGeneration() {
     course: selectedCourse
   }));
 
-  window.location.href = 'course-assignment.html';
+  window.location.href = getBaseUrl() + 'course-assignment.html';
 }
 
 function goBack() {
-  window.location.href = 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }
 
 function handleLogout() {
   localStorage.removeItem('isLoggedIn');
   sessionStorage.clear();
-  window.location.href = 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }

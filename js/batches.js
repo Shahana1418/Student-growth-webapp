@@ -83,7 +83,7 @@ function loadBatches() {
   const deptCode = params.get('dept') || sessionStorage.getItem('selectedDept');
 
   if (!deptCode) {
-    window.location.href = 'departments.html';
+    window.location.href = getBaseUrl() + 'departments.html';
     return;
   }
 
@@ -201,12 +201,12 @@ function createBatchCard(deptCode, batch) {
 function selectBatch(deptCode, year) {
   sessionStorage.setItem('selectedDept', deptCode);
   sessionStorage.setItem('selectedBatch', year);
-  window.location.href = `students.html?dept=${deptCode}&batch=${year}`;
+  window.location.href = getBaseUrl() + `students.html?dept=${deptCode}&batch=${year}`;
 }
 
 function goBack() {
   sessionStorage.removeItem('selectedDept');
-  window.location.href = 'departments.html';
+  window.location.href = getBaseUrl() + 'departments.html';
 }
 
 function handleLogout() {
@@ -214,5 +214,5 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }

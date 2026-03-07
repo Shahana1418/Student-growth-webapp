@@ -53,7 +53,7 @@ async function loadStudents() {
   currentBatch = params.get('batch') || sessionStorage.getItem('selectedBatch');
 
   if (!currentDept || !currentBatch) {
-    window.location.href = 'departments.html';
+    window.location.href = getBaseUrl() + 'departments.html';
     return;
   }
 
@@ -164,12 +164,12 @@ function filterStudents() {
 
 function goBack() {
   sessionStorage.removeItem('selectedBatch');
-  window.location.href = `batches.html?dept=${currentDept}`;
+  window.location.href = getBaseUrl() + 'batches.html?dept=${currentDept}`;
 }
 
 function goToDepartment() {
   sessionStorage.removeItem('selectedBatch');
-  window.location.href = `departments.html`;
+  window.location.href = getBaseUrl() + 'departments.html`;
 }
 
 function handleLogout() {
@@ -177,5 +177,5 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }

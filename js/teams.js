@@ -23,7 +23,7 @@ function loadTeams() {
   const teamsJSON = sessionStorage.getItem('generatedTeams');
 
   if (!teamsJSON) {
-    window.location.href = 'departments.html';
+    window.location.href = getBaseUrl() + 'departments.html';
     return;
   }
 
@@ -135,22 +135,22 @@ function createTeamCard(team, teamNumber) {
 
 function goBack() {
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = `students.html?dept=${currentDept}&batch=${currentBatch}`;
+  window.location.href = getBaseUrl() + 'students.html?dept=${currentDept}&batch=${currentBatch}`;
 }
 
 function goBackToStudents() {
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = `students.html?dept=${currentDept}&batch=${currentBatch}`;
+  window.location.href = getBaseUrl() + 'students.html?dept=${currentDept}&batch=${currentBatch}`;
 }
 
 function goHome() {
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }
 
 function goToDepartment() {
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = `departments.html`;
+  window.location.href = getBaseUrl() + 'departments.html`;
 }
 
 function handleLogout() {
@@ -158,7 +158,7 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }
 
 function downloadTeamsCSV() {
@@ -189,5 +189,5 @@ function goToAssignments() {
     dept: currentDept,
     batch: currentBatch
   }));
-  window.location.href = 'assignment.html';
+  window.location.href = getBaseUrl() + 'assignment.html';
 }

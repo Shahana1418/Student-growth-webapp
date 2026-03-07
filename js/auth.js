@@ -6,11 +6,11 @@ const ADMIN_PASSWORD = 'Admin';
 // Protected pages that require authentication
 const PROTECTED_PAGES = ['departments.html', 'batches.html', 'students.html', 'teams.html', 'assignment.html', 'syllabus.html', 'course-assignment.html'];
 
-// Helper function to get base path for GitHub Pages compatibility
-function getBasePath() {
-  const pathname = window.location.pathname;
-  // Remove trailing filename if it exists
-  return pathname.replace(/\/[^\/]*$/, '/');
+// Helper function to get base URL for GitHub Pages compatibility
+function getBaseUrl() {
+  const href = window.location.href;
+  const lastSlash = href.lastIndexOf('/');
+  return href.substring(0, lastSlash + 1);
 }
 
 function handleLogin(event) {
@@ -25,7 +25,7 @@ function handleLogin(event) {
     errorMessage.classList.remove('show');
 
     // Redirect to departments page
-    window.location.href = getBasePath() + 'departments.html';
+    window.location.href = getBaseUrl() + 'departments.html';
   } else {
     // Show error
     errorMessage.textContent = 'Invalid password. Please try again.';
@@ -36,7 +36,7 @@ function handleLogin(event) {
 }
 
 function goHome() {
-  window.location.href = getBasePath() + 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }
 
 function handleLogout() {
@@ -45,7 +45,7 @@ function handleLogout() {
   sessionStorage.removeItem('selectedDept');
   sessionStorage.removeItem('selectedBatch');
   sessionStorage.removeItem('generatedTeams');
-  window.location.href = getBasePath() + 'index.html';
+  window.location.href = getBaseUrl() + 'index.html';
 }
 
 // Check if user is logged in
@@ -60,7 +60,7 @@ function checkAuth() {
   // Prevent redirect loops
   if (isProtectedPage && !isLoggedIn) {
     if (!href.includes('login.html')) {
-      window.location.href = getBasePath() + 'login.html';
+      window.location.href = getBaseUrl() + 'login.html';
     }
     return;
   }
@@ -68,7 +68,7 @@ function checkAuth() {
   // If on login page but already logged in, redirect to index
   if (href.includes('login.html') && isLoggedIn) {
     if (!href.includes('index.html')) {
-      window.location.href = getBasePath() + 'index.html';
+      window.location.href = getBaseUrl() + 'index.html';
     }
   }
 }
