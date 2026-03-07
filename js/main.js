@@ -1,16 +1,11 @@
-// Navigation function v2
+// Navigation function
 function navigateTo(page) {
   console.log('Navigating to:', page);
 
-  // Get the directory path
-  const href = window.location.href;
-  const lastSlash = href.lastIndexOf('/');
-  const baseUrl = href.substring(0, lastSlash + 1);
-
   if (page === 'login') {
-    window.location.href = baseUrl + 'login.html';
+    window.location.href = './login.html';
   } else if (page === 'departments') {
-    window.location.href = baseUrl + 'departments.html';
+    window.location.href = './departments.html';
   }
 }
 
